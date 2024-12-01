@@ -1,0 +1,27 @@
+<%= form_with(model: lunch) do |form| %>
+  <% if lunch.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(lunch.errors.count, "error") %> prohibited this lunch from being saved:</h2>
+
+      <ul>
+        <% lunch.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :participant_id, style: "display: block" %>
+    <%= form.text_field :participant_id %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
