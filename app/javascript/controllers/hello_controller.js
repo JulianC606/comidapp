@@ -1,7 +1,9 @@
 import { Controller } from "@hotwired/stimulus"
+import Koder from '@maslick/koder'
 
 export default class extends Controller {
   connect() {
-    this.element.textContent = "Hello World!"
+    debugger
+    const koder = new Koder
   }
 }
