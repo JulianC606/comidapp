@@ -4,10 +4,7 @@ import audioFix from "@maslick/koder/ios_audiocontext_fix";
 
 export default class extends Controller {
   static values = {
-    dimensions: {
-      type: Object,
-      default: { width: window.innerWidth, height: window.innerHeight },
-    },
+    dimensions: Object,
     focusBox: Object,
     oldTime: Number,
   };
@@ -20,6 +17,7 @@ export default class extends Controller {
 
   connect() {
     console.log("connected");
+    this.#getDimesions();
     audioFix();
     this.#initServiceWorker();
 
@@ -32,6 +30,11 @@ export default class extends Controller {
 
   disconnect() {
     if (this.worker) return this.worker.terminate();
+  }
+
+  #getDimesions() {
+    const { width } = this.element.getBoundingClientRect();
+    this.dimensionsValue = { width: width, height: width };
   }
 
   #initServiceWorker() {
@@ -62,8 +65,9 @@ export default class extends Controller {
     this.worker.terminate();
     this.beep();
     this.stopVideo();
+    window.location.href = `/participants/${data}`;
     this.showCode(data, millis);
-    console.log(data)
+    console.log(data);
   }
 
   init() {
@@ -75,7 +79,10 @@ export default class extends Controller {
   tick(time) {
     if (this.video.readyState === this.video.HAVE_ENOUGH_DATA) {
       this.showElement(this.stopBtnTarget);
-      this.containerTarget.width = Math.min(this.dimensionsValue.width, this.video.videoWidth);
+      this.containerTarget.width = Math.min(
+        this.dimensionsValue.width,
+        this.video.videoWidth
+      );
       this.containerTarget.height = Math.min(
         this.dimensionsValue.height,
         this.video.videoHeight
@@ -87,7 +94,12 @@ export default class extends Controller {
       this.ctx.drawImage(this.video, 0, 0);
       this.ctx.fillStyle = "black";
       this.ctx.globalAlpha = 0.6;
-      this.ctx.fillRect(0, 0, this.containerTarget.width, this.containerTarget.height);
+      this.ctx.fillRect(
+        0,
+        0,
+        this.containerTarget.width,
+        this.containerTarget.height
+      );
       this.ctx.drawImage(
         this.video,
         sx,

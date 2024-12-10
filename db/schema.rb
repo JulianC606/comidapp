@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_01_204439) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_10_175640) do
   create_table "lunches", force: :cascade do |t|
     t.integer "participant_id", null: false
     t.integer "user_id", null: false

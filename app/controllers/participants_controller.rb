@@ -60,7 +60,7 @@ class ParticipantsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_participant
-      @participant = Participant.find(params.expect(:id))
+      @participant = Participant.find_by(barcode: params.expect(:barcode))
     end
 
     # Only allow a list of trusted parameters through.

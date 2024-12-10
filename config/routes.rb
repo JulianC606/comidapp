@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :lunches
-  resources :participants
+  resources :participants, param: :barcode
   resource :session
   resources :passwords, param: :token
 
