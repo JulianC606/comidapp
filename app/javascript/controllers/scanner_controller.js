@@ -9,34 +9,96 @@ export default class extends Controller {
     oldTime: Number,
   };
 
-  static targets = ["container", "startBtn", "stopBtn", "result", "time"];
+  static targets = ["container", "startBtn", "stopBtn", "result"];
 
   ctx = null;
   video = null;
   worker = null;
 
+  /**
+   * Connects the controller to the DOM
+   *
+   * @return {void}
+   */
   connect() {
-    console.log("connected");
     this.#getDimesions();
     audioFix();
     this.#initServiceWorker();
 
     this.ctx = this.containerTarget.getContext("2d");
 
-    this.init();
-    this.hideElement(this.resultTarget);
+    this.#init();
     this.tick = this.tick.bind(this);
   }
 
+  /**
+   * Disconnects the controller from the DOM
+   *
+   * @returns {void}
+   */
   disconnect() {
     if (this.worker) return this.worker.terminate();
   }
 
+  /**
+   * Start the video feed and initialize the worker to process the image data.
+   *
+   * @returns {void}
+   */
+  startVideo() {
+    this.video = document.createElement("video");
+    this.#hideElement(this.startBtnTarget);
+    this.#hideElement(this.stopBtnTarget);
+    this.#showCanvas();
+
+    this.#initWorker();
+    navigator.mediaDevices
+      .getUserMedia({ audio: false, video: { facingMode: "environment" } })
+      .then((stream) => {
+        this.video.srcObject = stream;
+        this.video.setAttribute("playsinline", "true");
+        this.video.play();
+        requestAnimationFrame(this.tick);
+      });
+  }
+
+  /**
+   * Stop the video feed and reset the scanner components
+   *
+   * @returns {void}
+   */
+  stopVideo() {
+    this.#hideElement(this.stopBtnTarget);
+    this.video.pause();
+    this.video.srcObject.getVideoTracks().forEach((track) => track.stop());
+    this.video.srcObject = null;
+    this.#init();
+  }
+
+  /**
+   * Clear the result input field
+   * 
+   * @returns {void}
+   */
+  clear() {
+    this.resultTarget.value = "";
+  }
+
+  /**
+   * Get the dimensions of the scanner screen from the controller's DOM element
+   *
+   * @returns {void}
+   */
   #getDimesions() {
     const { width } = this.element.getBoundingClientRect();
     this.dimensionsValue = { width: width, height: width };
   }
 
+  /**
+   * Initialize the service worker
+   *
+   * @returns {void}
+   */
   #initServiceWorker() {
     if (!navigator.serviceWorker) return;
 
@@ -55,30 +117,49 @@ export default class extends Controller {
       );
   }
 
-  initWorker() {
+  /**
+   * Trigger the job worker to process the image
+   *
+   * @returns {void}
+   */
+  #initWorker() {
     this.worker = new Worker(RAILS_ASSET_URL("/@maslick/koder/job.js"));
-    this.worker.onmessage = (ev) =>
-      this.terminateWorker(ev.data.data, ev.data.ms);
+    this.worker.onmessage = (ev) => this.#terminateWorker(ev.data.data);
   }
 
-  terminateWorker(data, millis) {
+  /**
+   * Terminate the worker and redirect to the participant's page after a successful scan
+   *
+   * @param {String} data - The participant's ID from the scanned Barcode
+   * @returns {void}
+   */
+  #terminateWorker(data) {
     this.worker.terminate();
-    this.beep();
+    this.#beep();
     this.stopVideo();
-    window.location.href = `/participants/${data}`;
-    this.showCode(data, millis);
-    console.log(data);
+    this.resultTarget.value = data;
   }
 
-  init() {
-    this.showElement(this.startBtnTarget);
-    this.hideElement(this.stopBtnTarget);
-    this.hideCanvas();
+  /**
+   * Initialize the scanner DOM components.
+   *
+   * @returns {void}
+   */
+  #init() {
+    this.#showElement(this.startBtnTarget);
+    this.#hideElement(this.stopBtnTarget);
+    this.#hideCanvas();
   }
 
+  /**
+   * Continuously capture the video feed and process the image. It also adds a mask to the video feed for
+   * better focus on the barcode.
+   * @param {Number} time
+   * @returns {void}
+   */
   tick(time) {
     if (this.video.readyState === this.video.HAVE_ENOUGH_DATA) {
-      this.showElement(this.stopBtnTarget);
+      this.#showElement(this.stopBtnTarget);
       this.containerTarget.width = Math.min(
         this.dimensionsValue.width,
         this.video.videoWidth
@@ -130,35 +211,14 @@ export default class extends Controller {
     requestAnimationFrame(this.tick);
   }
 
-  ////////////////
-  // Helpers
-  ////////////////
-  startVideo() {
-    this.video = document.createElement("video");
-    this.hideElement(this.startBtnTarget);
-    this.hideElement(this.stopBtnTarget);
-    this.showCanvas();
-
-    this.initWorker();
-    navigator.mediaDevices
-      .getUserMedia({ audio: false, video: { facingMode: "environment" } })
-      .then((stream) => {
-        this.video.srcObject = stream;
-        this.video.setAttribute("playsinline", "true");
-        this.video.play();
-        requestAnimationFrame(this.tick);
-      });
-  }
-
-  stopVideo() {
-    this.hideElement(this.stopBtnTarget);
-    this.video.pause();
-    this.video.srcObject.getVideoTracks().forEach((track) => track.stop());
-    this.video.srcObject = null;
-    this.init();
-  }
-
-  beep(freq = 750, duration = 150, vol = 5) {
+  /**
+   * Beep sound for the scanner
+   * @param {Number} freq beep frequency
+   * @param {Number} duration beep duration
+   * @param {Number} vol beep volume
+   * @returns {void}
+   */
+  #beep(freq = 750, duration = 150, vol = 5) {
     try {
       const context = window.audioContext;
       const oscillator = context.createOscillator();
@@ -176,28 +236,19 @@ export default class extends Controller {
     }
   }
 
-  ////////////////
-  // DOM
-  ////////////////
-  hideElement(el) {
+  #hideElement(el) {
     el.style.display = "none";
   }
 
-  showElement(el) {
+  #showElement(el) {
     el.style.display = "initial";
   }
 
-  hideCanvas() {
+  #hideCanvas() {
     this.containerTarget.hidden = true;
   }
 
-  showCanvas() {
+  #showCanvas() {
     this.containerTarget.hidden = false;
-  }
-
-  showCode(qr, ms) {
-    this.resultTarget.style.display = "flex";
-    this.resultTarget.innerText = qr;
-    this.timeTarget.innerHTML = `<div>Scanned in ${ms} ms</div>`;
   }
 }

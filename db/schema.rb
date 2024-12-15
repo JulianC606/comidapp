@@ -10,22 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_10_175640) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_15_145513) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_catalog.plpgsql"
+
   create_table "lunches", force: :cascade do |t|
-    t.integer "participant_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "participant_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "kind", default: "without_restrictions"
+    t.date "delivery_date"
     t.index ["participant_id"], name: "index_lunches_on_participant_id"
     t.index ["user_id"], name: "index_lunches_on_user_id"
   end
 
-# Could not dump table "participants" because of following StandardError
-#   Unknown type 'uuid' for column 'id'
-
+  create_table "participants", force: :cascade do |t|
+    t.string "name"
+    t.string "restrictions"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "barcode"
+    t.boolean "welcome_kit"
+  end
 
   create_table "sessions", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "ip_address"
     t.string "user_agent"
     t.datetime "created_at", null: false
@@ -38,6 +48,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_10_175640) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.boolean "admin", default: false
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 

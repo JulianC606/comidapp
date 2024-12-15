@@ -2,15 +2,18 @@
 
 <% content_for :title, "Participants" %>
 
-<h1>Participants</h1>
+<h1 class="text-3xl font-semibold text-title"><%= Participant.model_name.human(count: 2) %></h1>
 
-<div id="participants">
-  <% @participants.each do |participant| %>
-    <%= render participant %>
-    <p>
-      <%= link_to "Show this participant", participant %>
-    </p>
+<%= render layout: 'scanner' do %>
+  <%= form_with url: participants_path, scope: :participant, method: :get, class: 'mt-4 w-full' do |form| %>
+    <div class="field">
+      <%= form.label :barcode, Participant.human_attribute_name('barcode'), class: 'text-title' %>
+      <%= form.text_field :barcode, class: 'input variant-mixed sz-md', data: { scanner_target: :result }, required: true  %>
+    </div>
+    <div class="flex justify-end gap-4 mt-4">
+      <%= form.button t('.clear'), class: 'btn variant-soft sz-md', data: { action: "scanner#clear:prevent" } %>
+      <%= form.submit class: 'btn variant-primary sz-md' %>
+    </div>
   <% end %>
-</div>
+<% end %>
 
-<%= link_to "New participant", new_participant_path %>

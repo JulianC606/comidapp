@@ -1,10 +1,37 @@
 <p style="color: green"><%= notice %></p>
+  <%= link_to t('.back_to_participants'), participants_path, class: "block text-right w-full mb-8" %>
 
-<%= render @participant %>
+<div class="flex flex-col w-full items-stretch lg:flex-row lg:items-start gap-8">
+  <%= render @participant %>
 
-<div>
-  <%= link_to "Edit this participant", edit_participant_path(@participant) %> |
-  <%= link_to "Back to participants", participants_path %>
-
-  <%= button_to "Destroy this participant", @participant, method: :delete %>
+  <div class="card variant-mixed lg:grow overflow-y-auto" data-shade="900">
+    <table class="border-collapse table-auto dark:[--ui-soft-bg:var(--ui-bg)] w-full" data-rounded="medium">
+      <thead class="text-title sticky top-0 bg-ui-soft dark:bg-gray-925">
+        <tr>
+          <th colspan="<%= Current.user.admin? ? 4 : 2 %>" >
+            <%= Lunch.model_name.human %>
+          </th>
+        </tr>
+        <tr class="*:font-medium *:text-sm *:p-3 *:text-left">
+          <th class="rounded-l-[--card-radius]">
+            <%= Lunch.human_attribute_name('delivery_date') %>
+          </th>
+          <th class="<%=class_names('rounded-r-[--card-radius]': !Current.user.admin?)%>">
+            <%= Lunch.human_attribute_name('kind') %></th>
+          <% if Current.user.admin? %>
+            <th><%= Lunch.human_attribute_name('user') %></th>
+          <% end %>
+          <% if Current.user.admin? %>
+            <th class="rounded-r-[--card-radius]"><%= t '.actions' %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody class="text-sm" id='lunches'>
+        <% @lunches.each do |lunch, index| %>
+          <%= render lunch, participant: true %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
+

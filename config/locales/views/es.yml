@@ -1,0 +1,42 @@
+es:
+  application:
+    scanner:
+      start_scanner: Iniciar escáner
+      stop_scanner: Cerrar escáner
+      clear: Limpiar
+    header:
+      lunches: Almuerzos
+      participants: Participantes
+      users: Usuarios
+      logout: Cerrar sesión
+  dashboard:
+    index:
+      hi: ¡Hola, %{name}!
+      actions: Acciones
+      lunch: Registrar almuerzo
+      welcome_kit: Registrar kit de bienvenida
+      logout: Cerrar sesión
+  lunches:
+    index:
+      lunches: Almuerzos
+      actions: Acciones
+    lunch:
+      delete: Borrar
+  sessions:
+    new:
+      signup: Registro
+      login: Ingreso
+      need_to_signup: ¿Sin usuario?
+      signup_here: Regístrate aquí
+  users:
+    form:
+      signup: Registro
+      already_have_account: ¿Ya tienes una cuenta?
+      login: Ingresa aquí
+  participants:
+    participant:
+      delivered: Entragado
+      deliver: Entregar
+    show:
+      actions: Acciones
+      back_to_participants: Volver

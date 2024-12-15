@@ -1,12 +1,16 @@
-<div id="<%= dom_id lunch %>">
-  <p>
-    <strong>Participant:</strong>
-    <%= lunch.participant_id %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= lunch.user_id %>
-  </p>
-
-</div>
+<tr id="<%= dom_id lunch %>" class="*:p-3 *:border-b">
+  <% if participant %>
+    <td><%= l lunch.delivery_date, format: :short %></td>
+    <td><%= Lunch.human_attribute_name("kind.#{lunch.kind}") %></td>
+  <% else %>
+    <td><%= lunch.participant_name %></td>
+    <td><%= Lunch.human_attribute_name("kind.#{lunch.kind}") %></td>
+    <td><%= l lunch.delivery_date, format: :short %></td>
+  <% end %>
+  <% if Current.user.admin? %>
+    <td><%= lunch.user_name %></td>
+  <% end %>
+  <% if Current.user.admin? %>
+    <td><%= button_to t('.delete'), lunch, method: :delete %></td>
+  <% end %>
+</tr>

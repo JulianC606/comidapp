@@ -1,9 +1,10 @@
 class LunchesController < ApplicationController
   before_action :set_lunch, only: %i[ show edit update destroy ]
+  before_action :set_participant, only: %i[ new ]
 
   # GET /lunches or /lunches.json
   def index
-    @lunches = Lunch.all
+    @lunches = Lunch.page(params[:page])
   end
 
   # GET /lunches/1 or /lunches/1.json
@@ -25,7 +26,7 @@ class LunchesController < ApplicationController
 
     respond_to do |format|
       if @lunch.save
-        format.html { redirect_to @lunch, notice: "Lunch was successfully created." }
+        format.html { redirect_to lunches_path, notice: "Lunch was successfully created." }
         format.json { render :show, status: :created, location: @lunch }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -63,8 +64,12 @@ class LunchesController < ApplicationController
       @lunch = Lunch.find(params.expect(:id))
     end
 
+    def set_participant
+      @participant = Participant.find_by(barcode: params.expect(lunch: [ :participant_barcode ])[:participant_barcode])
+    end
+
     # Only allow a list of trusted parameters through.
     def lunch_params
-      params.expect(lunch: [ :participant_id, :user_id ])
+      params.expect(lunch: [ :participant_id, :user_id, :kind, :delivery_date ])
     end
 end

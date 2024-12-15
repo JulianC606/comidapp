@@ -1,13 +1,35 @@
-<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
 
-<%= image_tag '/assets/images/logo.png', class: "w-32" %>
+<%= form_with(url: session_path, class: "mt-12") do |form| %>
+  <% if flash[:alert].present? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= flash[:alert] %></h2>
+    </div>
+  <% end %>
+  <section class="mx-auto flex w-full max-w-xs items-center">
+    <div class="w-full">
+      <%= show_svg 'logo', class: 'w-32 block mx-auto' %>
+      <h1 class="text-title text-xl font-semibold"><%= t '.login' %></h1>
+      <hr class="my-4 border-dashed" />
+      <div class="mb-8 space-y-4" data-shade="950">
+        <div class="field">
+          <%= form.label :email_address, Participant.human_attribute_name('email_address') %>
+          <%= form.text_field :email_address, class: 'input variant-mixed sz-md', required: true %>
+        </div>
+        <div class="field">
+          <%= form.label :password, Participant.human_attribute_name('password') %>
+          <%= form.password_field :password, class: 'input variant-mixed sz-md', required: true %>
+        </div>
+      </div>
+      <%= form.button type: :submit, class: "btn variant-primary sz-md w-full" do %>
+        <span class="btn-label"><%= t '.login' %></span>
+      <% end %>
+      <div class="mt-12">
+        <p class="text-caption text-center text-sm">
+          <%= t '.need_to_signup' %> 
+          <%= link_to t('.signup_here'), new_user_path, class: 'link variant-underlined intent-neutral' %>
+        </p>
+      </div>
+    </div>
+  </section>
 
-<%= form_with url: session_path do |form| %>
-  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
-  <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %><br>
-  <%= form.submit "Sign in" %>
 <% end %>
-<br>
-
-<%= link_to "Forgot password?", new_password_path %>

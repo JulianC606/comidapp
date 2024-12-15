@@ -51,6 +51,7 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem "pry", "~> 0.15.0"
 end
 
 group :development do
@@ -65,3 +66,7 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 3.0"
+
+gem "kaminari", "~> 1.2"
+
+gem "pg", "~> 1.5"

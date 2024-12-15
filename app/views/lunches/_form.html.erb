@@ -10,18 +10,30 @@
       </ul>
     </div>
   <% end %>
+  <%= form.hidden_field :participant_id, value: @participant.id %>
+  <%= form.hidden_field :user_id, value: Current.user_id %>
+  <%= form.hidden_field :delivery_date, value: Time.current.to_date %>
 
-  <div>
-    <%= form.label :participant_id, style: "display: block" %>
-    <%= form.text_field :participant_id %>
+
+  <div class="field mt-4">
+    <%= form.label :participant_name, Participant.human_attribute_name('name'), class: 'text-title' %>
+    <%= form.text_field :participant_name, value: @participant.name, class: 'input variant-mixed sz-md', readonly: true  %>
+  </div>
+  <% if edit_user %>
+    <div class="field mt-4">
+      <%= form.label :user_name, User.human_attribute_name('name'), class: 'text-title' %>
+      <%= form.text_field :user_name, value: Current.user_name, class: 'input variant-mixed sz-md', readonly: true  %>
+    </div>
+  <% end %>
+
+  <div class="field mt-4">
+    <%= form.label :kind, class: 'text-title' %>
+    <%= form.select :kind, Lunch.humanized_kinds, { selected: @participant.restrictions || 'without_restrictions' },
+                                                  class: 'input variant-mixed sz-md appearance-none'  %>
   </div>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="flex justify-end gap-4 mt-4">
+    <%= yield %>
+    <%= form.submit class: 'btn variant-primary sz-md' %>
   </div>
 <% end %>

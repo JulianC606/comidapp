@@ -1,0 +1,19 @@
+<div id="participant-scanner" class="w-full flex flex-col items-center" data-controller="scanner" data-scanner-focus-box-value='{"width": 200, "height": 200}'>
+  <div class="canvas">
+    <canvas data-scanner-target="container" hidden></canvas>
+  </div>
+  <div class="w-full flex flex-col mt-4">
+    <button data-scanner-target="startBtn"
+       class="btn variant-neutral sz-md w-full"
+       data-action="scanner#startVideo:prevent">
+      <%= t('.start_scanner') %>
+    </button>
+    <button data-scanner-target="stopBtn"
+       class="btn variant-neutral sz-md"
+       data-action="scanner#stopVideo:prevent">
+      <%= t('.stop_scanner') %>
+    </button>
+  </div>
+
+  <%= yield %>
+</div>

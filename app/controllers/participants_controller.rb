@@ -3,11 +3,12 @@ class ParticipantsController < ApplicationController
 
   # GET /participants or /participants.json
   def index
-    @participants = Participant.all
+    redirect_to participant_path(barcode: participant_barcode) if params[:participant]
   end
 
   # GET /participants/1 or /participants/1.json
   def show
+    @lunches = @participant.lunches
   end
 
   # GET /participants/new
@@ -38,7 +39,7 @@ class ParticipantsController < ApplicationController
   def update
     respond_to do |format|
       if @participant.update(participant_params)
-        format.html { redirect_to @participant, notice: "Participant was successfully updated." }
+        format.html { redirect_to participant_path(@participant.barcode), notice: "Participant was successfully updated." }
         format.json { render :show, status: :ok, location: @participant }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,6 +59,10 @@ class ParticipantsController < ApplicationController
   end
 
   private
+    def participant_barcode
+      params.expect(participant: :barcode)[:barcode]
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_participant
       @participant = Participant.find_by(barcode: params.expect(:barcode))
@@ -65,6 +70,6 @@ class ParticipantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def participant_params
-      params.expect(participant: [ :name, :restrictions ])
+      params.expect(participant: [ :name, :restrictions, :welcome_kit ])
     end
 end

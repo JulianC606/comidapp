@@ -1,12 +1,17 @@
-<div id="<%= dom_id participant %>">
-  <p>
-    <strong>Name:</strong>
-    <%= participant.name %>
-  </p>
-
-  <p>
-    <strong>Restrictions:</strong>
-    <%= participant.restrictions %>
-  </p>
-
+<div class="card variant-mixed lg:max-w-xs w-full" data-shade="900" id="<%= dom_id participant %>">
+  <span class="text-caption text-xs"><%= Participant.model_name.human %></span>
+  <h3 class="mt-2 text-title font-medium text-3xl"><%= participant.name %></h3>
+  <span class="text-caption text-xs"><%= Participant.human_attribute_name 'restrictions' %></span>
+  <h3 class="mt-2 text-title font-medium text-xl"><%= Participant.human_attribute_name "kind.#{participant.restrictions}" %></h3>
+  <span class="text-caption text-xs"><%= Participant.human_attribute_name 'welcome_kit' %></span>
+  <% if participant.welcome_kit? %>
+    <h3 class="mt-2 text-title font-medium text-xl"><%= t '.delivered' %></h3>
+  <% else %>
+    <%= button_to participant_path(barcode: participant.barcode), 
+                  method: :patch, 
+                  params: { participant: { welcome_kit: true } },
+                  class: 'btn variant-primary sz-md mt-2 w-full' do %>
+      <span class="btn-title"><%= t '.deliver' %></span>
+    <% end %>
+  <% end %>
 </div>

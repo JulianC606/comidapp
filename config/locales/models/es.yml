@@ -1,0 +1,24 @@
+es:
+  activerecord:
+    models:
+      lunch:
+        one: Almuerzo
+        other: Almuerzos
+      participant:
+        one: Participante
+        other: Participantes
+      user:
+        one: Usuario
+        other: Usuarios
+    attributes:
+      participant:
+        barcode: Código de barras
+        name: Nombre
+        welcome_kit: Kit de bienvenida
+        restrictions: Restricciones
+      lunch:
+        delivery_date: Fecha
+        participants: Participantes
+        user: Usuario
+        kind: Restricciones
+

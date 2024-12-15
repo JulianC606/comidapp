@@ -1,0 +1,13 @@
+<h1 class="text-center text-lg"><%= t('.hi', name: Current.user.name) %></h1>
+
+<h2 class='text-center text-title text-2xl'><%= t('.actions') %></h2>
+<div class="flex flex-col w-full gap-8 mt-8">
+
+  <%= link_to t('.lunch'), lunches_path, class: 'btn variant-primary sz-xl' %>
+  <%= link_to  participants_path, class: 'btn variant-outlined sz-xl' do %>
+    <span class="btn-title">
+      <%= t('.welcome_kit') %>
+    </span>
+  <% end %>
+  <%= button_to t('.logout'), session_path, method: :delete, class: 'btn variant-neutral sz-xl w-full' %>
+</div>
