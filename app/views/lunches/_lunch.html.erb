@@ -1,10 +1,10 @@
 <tr id="<%= dom_id lunch %>" class="*:p-3 *:border-b">
   <% if participant %>
     <td><%= l lunch.delivery_date, format: :short %></td>
-    <td><%= Lunch.human_attribute_name("kind.#{lunch.kind}") %></td>
+    <td><%= Lunch.human_attribute_name("kind/#{lunch.kind}") %></td>
   <% else %>
     <td><%= lunch.participant_name %></td>
-    <td><%= Lunch.human_attribute_name("kind.#{lunch.kind}") %></td>
+    <td><%= Lunch.human_attribute_name("kind/#{lunch.kind}") %></td>
     <td><%= l lunch.delivery_date, format: :short %></td>
   <% end %>
   <% if Current.user.admin? %>

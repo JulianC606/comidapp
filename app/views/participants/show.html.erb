@@ -5,13 +5,11 @@
   <%= render @participant %>
 
   <div class="card variant-mixed lg:grow overflow-y-auto" data-shade="900">
+    <h2 class="text-title">
+      <%= Lunch.model_name.human(count: 2) %>
+    </h2>
     <table class="border-collapse table-auto dark:[--ui-soft-bg:var(--ui-bg)] w-full" data-rounded="medium">
       <thead class="text-title sticky top-0 bg-ui-soft dark:bg-gray-925">
-        <tr>
-          <th colspan="<%= Current.user.admin? ? 4 : 2 %>" >
-            <%= Lunch.model_name.human %>
-          </th>
-        </tr>
         <tr class="*:font-medium *:text-sm *:p-3 *:text-left">
           <th class="rounded-l-[--card-radius]">
             <%= Lunch.human_attribute_name('delivery_date') %>

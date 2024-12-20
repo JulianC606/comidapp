@@ -17,11 +17,15 @@ es:
       welcome_kit: Registrar kit de bienvenida
       logout: Cerrar sesión
   lunches:
+    form:
+      discard: Descartar
     index:
       lunches: Almuerzos
       actions: Acciones
     lunch:
       delete: Borrar
+    new:
+      title: Registrar almuerzo
   sessions:
     new:
       signup: Registro

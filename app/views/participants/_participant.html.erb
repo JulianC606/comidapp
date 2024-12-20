@@ -2,7 +2,7 @@
   <span class="text-caption text-xs"><%= Participant.model_name.human %></span>
   <h3 class="mt-2 text-title font-medium text-3xl"><%= participant.name %></h3>
   <span class="text-caption text-xs"><%= Participant.human_attribute_name 'restrictions' %></span>
-  <h3 class="mt-2 text-title font-medium text-xl"><%= Participant.human_attribute_name "kind.#{participant.restrictions}" %></h3>
+  <h3 class="mt-2 text-title font-medium text-xl"><%= Participant.human_attribute_name "restrictions/#{participant.restrictions}" %></h3>
   <span class="text-caption text-xs"><%= Participant.human_attribute_name 'welcome_kit' %></span>
   <% if participant.welcome_kit? %>
     <h3 class="mt-2 text-title font-medium text-xl"><%= t '.delivered' %></h3>

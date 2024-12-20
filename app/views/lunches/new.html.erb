@@ -3,5 +3,7 @@
 <h1><%= t('.title') %></h1>
 
 <%= render "form", lunch: @lunch, edit_user: false do %>
-  <%= link_to t('.discard'), lunches_path, class: 'btn variant-outlined sz-md' %>
+  <%= link_to lunches_path, class: 'btn variant-outlined sz-md' do %>
+    <span class="btn-title"><%= t '.discard' %></span>
+  <% end %>
 <% end %>
