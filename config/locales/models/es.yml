@@ -20,7 +20,9 @@ es:
         restrictions/halal: Halal
         restrictions/vegetarian: Vegetariano
         restrictions/vegan: Veganos
-        restrictions/pecitarians: Pecitarianos
+        restrictions/pescatarians: Pescatarianos
+        restrictions/gluten_free: Sin gluten (Sin restricciones)
+        restrictions/lactose_free: Sin lactosa (Sin restricciones)
         restrictions/without_restrictions: Sin restricciones
       lunch:
         delivery_date: Fecha
@@ -31,6 +33,14 @@ es:
         kind/halal: Halal
         kind/vegetarian: Vegetariano
         kind/vegan: Veganos
-        kind/pecitarians: Pecitarianos
+        kind/pescatarians: Pescatarianos
+        kind/gluten_free: Sin gluten
+        kind/lactose_free: Sin lactosa
         kind/without_restrictions: Sin restricciones
-
+      user:
+        locale/es: Español
+        locale/en: English
+        name: Nombre
+        email_address: Correo Electrónico
+        password: Contraseña
+        locale: Lenguaje

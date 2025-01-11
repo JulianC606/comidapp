@@ -1,0 +1,46 @@
+en:
+  application:
+    scanner:
+      start_scanner: Start scanner
+      stop_scanner: Stop scanner
+      clear: Clear
+    header:
+      lunches: Lunches
+      participants: Participants
+      users: Users
+      logout: Logout
+  dashboard:
+    index:
+      hi: Hi, %{name}!
+      actions: Actions
+      lunch: Register lunch
+      welcome_kit: Register welcome kit
+      logout: Logout
+  lunches:
+    form:
+      discard: Discard
+    index:
+      lunches: Lunches
+      actions: Actions
+    lunch:
+      delete: Delete
+    new:
+      title: Register lunch
+  sessions:
+    new:
+      signup: Sign up
+      login: Log in
+      need_to_signup: Don't have an account?
+      signup_here: Sign up
+  users:
+    form:
+      signup: Sign up
+      already_have_account: Do you already have an account?
+      login: Log in here
+  participants:
+    participant:
+      delivered: Delivered
+      deliver: Deliver
+    show:
+      actions: Actions
+      back_to_participants: Back to participants

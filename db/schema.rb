@@ -10,13 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_15_145513) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "pg_catalog.plpgsql"
-
+ActiveRecord::Schema[8.0].define(version: 2024_12_22_213220) do
   create_table "lunches", force: :cascade do |t|
-    t.bigint "participant_id", null: false
-    t.bigint "user_id", null: false
+    t.integer "participant_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "kind", default: "without_restrictions"
@@ -35,7 +32,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_15_145513) do
   end
 
   create_table "sessions", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.string "ip_address"
     t.string "user_agent"
     t.datetime "created_at", null: false
@@ -50,6 +47,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_15_145513) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.boolean "admin", default: false
+    t.string "locale", default: "en"
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 

@@ -1,0 +1,46 @@
+en:
+  activerecord:
+    models:
+      lunch:
+        one: Lunch
+        other: Lunches
+      participant:
+        one: Participant
+        other: Participants
+      user:
+        one: User
+        other: Users
+    attributes:
+      participant:
+        barcode: Barcode
+        name: Name
+        welcome_kit: Welcome kit
+        restrictions: Restrictions
+        restrictions/kosher: Kosher
+        restrictions/halal: Halal
+        restrictions/vegetarian: Vegetarian
+        restrictions/vegan: Vegan
+        restrictions/pescatarians: Pescatarians
+        restrictions/gluten_free: Gluten free (Without restrictions)
+        restrictions/lactose_free: Lactose free (Without restrictions)
+        restrictions/without_restrictions: Without restrictions
+      lunch:
+        delivery_date: Date
+        participants: Participants
+        user: User
+        kind: Restrictions
+        kind/kosher: Kosher
+        kind/halal: Halal
+        kind/vegetarian: Vegetarian
+        kind/vegan: Vegan
+        kind/pescatarians: Pescatarians
+        kind/gluten_free: Gluten free
+        kind/lactose_free: Lactose free
+        kind/without_restrictions: Without restrictions
+      user:
+        locale/es: Español
+        locale/en: English
+        name: Name
+        email_address: Email address
+        password: Password
+        locale: Language

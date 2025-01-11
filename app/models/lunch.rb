@@ -7,7 +7,7 @@ class Lunch < ApplicationRecord
   delegate :name, to: :participant, prefix: true, allow_nil: true
   delegate :name, to: :user, prefix: true, allow_nil: true
 
-  enum :kind, { kosher: "kosher", halal: "halal", vegetarian: "vegetarian", vegan: "vegan", peciterians: "peciterians",
+  enum :kind, { kosher: "kosher", halal: "halal", vegetarian: "vegetarian", vegan: "vegan", pescatarians: "pescatarians",
                 without_restrictions: "without_restrictions" }
 
   class << self

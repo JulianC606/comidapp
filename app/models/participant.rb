@@ -1,6 +1,15 @@
 class Participant < ApplicationRecord
-  enum :restrictions, { kosher: "kosher", halal: "halal", vegetarian: "vegetarian", vegan: "vegan",
-                        without_restrictions: "without_restrictions" }
+  include FoodRestrictionable
 
-  has_many :lunches, dependent: :destroy
+  ROLES = { speaker: "speaker",
+            adjudicator: "adjudicator",
+            volunteer: "volunteer",
+            host: "host",
+            tab_director: "tab_director",
+            tab: "tab",
+            chief_adjudicator: "chief_adjudicator",
+            deputy_chief_adjudicator: "deputy_chief_adjudicator",
+            observer: "observer" }.freeze
+
+  enum :role, ROLES
 end
