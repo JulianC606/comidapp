@@ -206,7 +206,7 @@ GEM
       activesupport (>= 7.0.0)
       rack
       railties (>= 7.0.0)
-    pry (0.15.0)
+    pry (0.15.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
     psych (5.2.2)
@@ -399,7 +399,7 @@ DEPENDENCIES
   kamal
   kaminari (~> 1.2)
   propshaft
-  pry (~> 0.15.0)
+  pry (~> 0.15.2)
   puma (>= 5.0)
   rails (~> 8.0.0)
   rubocop-rails-omakase
