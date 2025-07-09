@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+useradmin = Rails.application.credentials.useradmin.presence || { 'email' => 'admin@example.com', 'password' => '123QWEqwe!' }
+User.create!(email_address: useradmin['email'], password: useradmin['password'], admin: true, locale: :es)
+
+Participant.create!(name: 'John Doe', barcode: '1', role: 'speaker')

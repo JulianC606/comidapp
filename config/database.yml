@@ -14,10 +14,17 @@ development:
   primary:
     <<: *default
     database: storage/dbs/development_primary.sqlite3
-    
+  cache:
+    <<: *default
+    database: <%= ENV["DB_CACHE"] %>
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *default
+    database: <%= ENV["DB_QUEUE"] %>
+    migrations_paths: db/queue_migrate
   cable:
     <<: *default
-    database: storage/dbs/development_cable.sqlite3
+    database: <%= ENV["DB_CABLE"] %>
     migrations_paths: db/cable_migrate
 
 # Warning: The database defined as "test" will be erased and

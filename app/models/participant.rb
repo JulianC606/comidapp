@@ -5,10 +5,7 @@ class Participant < ApplicationRecord
             adjudicator: "adjudicator",
             volunteer: "volunteer",
             host: "host",
-            tab_director: "tab_director",
-            tab: "tab",
-            chief_adjudicator: "chief_adjudicator",
-            deputy_chief_adjudicator: "deputy_chief_adjudicator",
+            academic_team: "academic_team",
             observer: "observer" }.freeze
 
   enum :role, ROLES
