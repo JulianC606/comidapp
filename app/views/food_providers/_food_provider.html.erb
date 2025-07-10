@@ -1,10 +1,13 @@
 <div id="<%= dom_id food_provider %>">
   <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
+    <strong class="block font-medium mb-1">
+      <%= food_provider.class.human_attribute_name(:name) %>
+    </strong>
     <%= food_provider.name %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Default:</strong>
-    <%= food_provider.default %>
+    <% if food_provider.default? %>
+      <strong class="ms-2 py-2 px-4 rounded-xl bg-blue-600 text-white font-bold">
+        <%= food_provider.class.human_attribute_name(:default) %>
+      </strong>
+    <% end %>
   </p>
 </div>

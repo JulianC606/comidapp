@@ -1,7 +1,9 @@
 <%= form_with(model: food_restriction) do |form| %>
   <% if food_restriction.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
-      <h2><%= pluralize(food_restriction.errors.count, "error") %> prohibited this food_restriction from being saved:</h2>
+      <h2>
+        <%= t('errors.template.header', count: food_restriction.errors.count, model: food_restriction.class.model_name.human) %>
+      </h2>
 
       <ul class="list-disc ml-6">
         <% food_restriction.errors.each do |error| %>

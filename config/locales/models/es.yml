@@ -10,33 +10,21 @@ es:
       user:
         one: Usuario
         other: Usuarios
+      food_provider:
+        one: Proveedor
+        other: Proveedores
+      food_restriction:
+        one: Restricción Alimenticia
+        other: Restricciones Alimenticias
     attributes:
       participant:
         barcode: Código de barras
         name: Nombre
         welcome_kit: Kit de bienvenida
-        restrictions: Restricciones
-        restrictions/kosher: Kosher
-        restrictions/halal: Halal
-        restrictions/vegetarian: Vegetariano
-        restrictions/vegan: Veganos
-        restrictions/pescatarians: Pescatarianos
-        restrictions/gluten_free: Sin gluten (Sin restricciones)
-        restrictions/lactose_free: Sin lactosa (Sin restricciones)
-        restrictions/without_restrictions: Sin restricciones
       lunch:
         delivery_date: Fecha
         participants: Participantes
         user: Usuario
-        kind: Restricciones
-        kind/kosher: Kosher
-        kind/halal: Halal
-        kind/vegetarian: Vegetariano
-        kind/vegan: Veganos
-        kind/pescatarians: Pescatarianos
-        kind/gluten_free: Sin gluten
-        kind/lactose_free: Sin lactosa
-        kind/without_restrictions: Sin restricciones
       user:
         locale/es: Español
         locale/en: English
@@ -44,3 +32,9 @@ es:
         email_address: Correo Electrónico
         password: Contraseña
         locale: Lenguaje
+      food_provider:
+        name: Nombre
+        default: Predeterminado
+      food_restriction:
+        name: Nombre
+        kind: Tipo

@@ -1,13 +1,20 @@
-<% content_for :title, "Food providers" %>
+<% content_for :title, @food_providers.model_name.human(count: 2) %>
+
 <div class="w-full">
   <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice">
+      <%= notice %>
+    </p>
   <% end %>
 
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Tests</h1>
-    <%= link_to "New food provider", new_food_provider_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
+    <h1 class="font-bold text-4xl"><%= @food_providers.model_name.human(count: 2) %></h1>
+    <%= link_to
+          t('helpers.anchors.new', model: @food_providers.model_name.human),
+          new_food_provider_path,
+          class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium"
+        %>
   </div>
 
   <div id="food_providers" class="min-w-full">
@@ -15,11 +22,17 @@
       <% @food_providers.each do |test| %>
         <%= render food_provider %>
         <p>
-          <%= link_to "Show this food provider", food_provider, class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+          <%= link_to
+                t('helpers.anchors.show', model: @food_providers.model_name.human),
+                food_provider,
+                class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium"
+              %>
         </p>
       <% end %>
     <% else %>
-      <p class="text-center my-10">No food providers found.</p>
+      <p class="text-center my-10">
+        <%= t('helpers.titles.none', model: @food_providers.model_name.human(count: 2))%>
+      </p>
     <% end %>
   </div>
 </div>

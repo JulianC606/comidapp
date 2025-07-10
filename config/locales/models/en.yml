@@ -10,33 +10,21 @@ en:
       user:
         one: User
         other: Users
+      food_provider:
+        one: Provider
+        other: Providers
+      food_restriction:
+        one: Food Restriction
+        other: Food Restrictions
     attributes:
       participant:
         barcode: Barcode
         name: Name
         welcome_kit: Welcome kit
-        restrictions: Restrictions
-        restrictions/kosher: Kosher
-        restrictions/halal: Halal
-        restrictions/vegetarian: Vegetarian
-        restrictions/vegan: Vegan
-        restrictions/pescatarians: Pescatarians
-        restrictions/gluten_free: Gluten free (Without restrictions)
-        restrictions/lactose_free: Lactose free (Without restrictions)
-        restrictions/without_restrictions: Without restrictions
       lunch:
         delivery_date: Date
         participants: Participants
         user: User
-        kind: Restrictions
-        kind/kosher: Kosher
-        kind/halal: Halal
-        kind/vegetarian: Vegetarian
-        kind/vegan: Vegan
-        kind/pescatarians: Pescatarians
-        kind/gluten_free: Gluten free
-        kind/lactose_free: Lactose free
-        kind/without_restrictions: Without restrictions
       user:
         locale/es: Español
         locale/en: English
@@ -44,3 +32,9 @@ en:
         email_address: Email address
         password: Password
         locale: Language
+      food_provider:
+        name: Name
+        default: Default
+      food_restriction:
+        name: Name
+        kind: Type

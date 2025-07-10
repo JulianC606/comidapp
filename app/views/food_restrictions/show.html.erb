@@ -1,20 +1,31 @@
-<% content_for :title, "Showing food restriction" %>
+<% content_for :title, t('helpers.titles.showing', model: @food_restriction.model_name.human) %>
 
-<div class="md:w-2/3 w-full">
-
+<div class="w-full">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice">
       <%= notice %>
     </p>
   <% end %>
-  <h1 class="font-bold text-4xl">Showing food restriction</h1>
+  <h1 class="font-bold text-4xl"><%= t('helpers.titles.showing', model: @food_restriction.model_name.human) %></h1>
 
   <%= render @food_restriction %>
 
-<div>
-  <%= link_to "Edit this food restriction", edit_food_restriction_path(@test), class: "mt-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-  <%= link_to "Back to food restrictions", food_restrictions_path, class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+  <%= link_to
+        t('helpers.anchors.edit', model: @food_restriction.model_name.human),
+        edit_food_restriction_path(@food_restriction),
+        class: "mt-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium"
+      %>
+  <%= link_to 
+        t('helpers.anchors.back', model: @food_restriction.model_name.human(count: 2)),
+        food_restrictions_path,
+        class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium"
+      %>
   <div class="inline-block ml-2">
-    <%= button_to "Destroy this food restriction", @food_restriction, method: :delete, class: "mt-2 rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium" %>
+    <%= button_to
+          t('helpers.actions.destroy', model: @food_restriction.model_name.human(count: 2)),
+          @food_restriction,
+          method: :delete,
+          class: "mt-2 rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium"
+        %>
   </div>
 </div>

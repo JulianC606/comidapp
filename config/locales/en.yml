@@ -28,4 +28,16 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  helpers:
+    anchors:
+      new: New %{model}
+      edit: Edit %{model}
+      show: Show this %{model}
+      back: Back to %{model}
+    actions:
+      destroy: Destroy ${model}
+    titles:
+      new: New %{}
+      editing: Editing %{model}
+      none: No %{model} found
+      showing: Showing %{model}

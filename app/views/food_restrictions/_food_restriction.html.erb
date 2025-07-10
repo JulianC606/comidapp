@@ -1,10 +1,14 @@
 <div id="<%= dom_id food_restriction %>">
   <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
+    <strong class="block font-medium mb-1">
+      <%= food_restriction.class.human_attribute_name(:name) %>
+    </strong>
     <%= food_restriction.name %>
   </p>
   <p class="my-5">
-    <strong class="block font-medium mb-1">Kind:</strong>
+    <strong class="block font-medium mb-1">
+      <%= food_restriction.class.human_attribute_name(:kind) %>
+    </strong>
     <%= food_restriction.kind %>
   </p>
 </div>

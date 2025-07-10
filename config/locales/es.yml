@@ -153,7 +153,17 @@ es:
       submit: Guardar %{model}
       update: Actualizar %{model}
     anchors:
-      new: Nuevo %{model}
+      new: Nuevo/a %{model}
+      edit: Editar este/a %{model}
+      show: Mostrar este/a %{model}
+      back: Volver a %{model}
+    actions:
+      destroy: Eliminar %{model}
+    titles:
+      new: Nuevo/a %{model}
+      editing: Editando %{model}
+      none: No se encontraron %{model}
+      showing: Mostrando un %{model}
   number:
     currency:
       format:
@@ -163,7 +173,7 @@ es:
         separator: ","
         significant: false
         strip_insignificant_zeros: false
-        unit: "€"
+        unit: "$"
     format:
       delimiter: "."
       precision: 3
