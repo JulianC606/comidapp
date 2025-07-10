@@ -9,6 +9,8 @@
 #   end
 
 useradmin = Rails.application.credentials.useradmin.presence || { 'email' => 'admin@example.com', 'password' => '123QWEqwe!' }
-User.create!(email_address: useradmin['email'], password: useradmin['password'], admin: true, locale: :es)
+User.create!(email_address: useradmin['email'], password: useradmin['password'], admin: true, locale: :es) if User.count.zero?
 
-Participant.create!(name: 'John Doe', barcode: '1', role: 'speaker')
+food_provider = FoodProvider.create(name: 'Base', default: true)
+
+Participant.create!(name: 'John Doe', barcode: '1', role: 'speaker', food_provider:)

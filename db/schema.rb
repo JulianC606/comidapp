@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_22_213220) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_09_232342) do
+  create_table "food_providers", force: :cascade do |t|
+    t.string "name"
+    t.boolean "default", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "food_restriction_participants", force: :cascade do |t|
+    t.integer "food_restriction_id", null: false
+    t.integer "participant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["food_restriction_id"], name: "index_food_restriction_participants_on_food_restriction_id"
+    t.index ["participant_id"], name: "index_food_restriction_participants_on_participant_id"
+  end
+
+  create_table "food_restrictions", force: :cascade do |t|
+    t.string "name"
+    t.string "kind"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "lunches", force: :cascade do |t|
     t.integer "participant_id", null: false
     t.integer "user_id", null: false
@@ -18,6 +41,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_22_213220) do
     t.datetime "updated_at", null: false
     t.string "kind", default: "without_restrictions"
     t.date "delivery_date"
+    t.integer "food_provider_id", null: false
+    t.index ["food_provider_id"], name: "index_lunches_on_food_provider_id"
     t.index ["participant_id"], name: "index_lunches_on_participant_id"
     t.index ["user_id"], name: "index_lunches_on_user_id"
   end
@@ -29,6 +54,9 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_22_213220) do
     t.datetime "updated_at", null: false
     t.string "barcode"
     t.boolean "welcome_kit"
+    t.string "role"
+    t.integer "food_provider_id", null: false
+    t.index ["food_provider_id"], name: "index_participants_on_food_provider_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -51,7 +79,11 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_22_213220) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  add_foreign_key "food_restriction_participants", "food_restrictions"
+  add_foreign_key "food_restriction_participants", "participants"
+  add_foreign_key "lunches", "food_providers"
   add_foreign_key "lunches", "participants"
   add_foreign_key "lunches", "users"
+  add_foreign_key "participants", "food_providers"
   add_foreign_key "sessions", "users"
 end
