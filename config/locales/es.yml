@@ -164,6 +164,10 @@ es:
       editing: Editando %{model}
       none: No se encontraron %{model}
       showing: Mostrando un %{model}
+    notices:
+      created: ¡El/la %{model} se creó exitósamente!
+      updated: ¡El/la %{model} se actualizó exitósamente!
+      destroyed: Se eliminó el/la %{model} corréctamente.
   number:
     currency:
       format:

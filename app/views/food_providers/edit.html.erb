@@ -7,15 +7,14 @@
 
   <%= render "form", food_provider: @food_provider %>
 
-  <%= link_to 
+  <%= link_to(
         t('helpers.anchors.show', model: @food_provider.human_class_name),
         @food_provider,
         class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium"
-      %>
-  |
-  <%= link_to 
+      ) %>
+  <%= link_to(
         t('helpers.anchors.back', model: @food_provider.human_class_name(count: 2)),
         food_providers_path,
         class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium"
-      %>
+      ) %>
 </div>

@@ -28,6 +28,16 @@
                   <span><%= t('.users') %></span>
                 <% end %>
                 </li>
+                <li>
+                  <%= link_to food_restrictions_path, class: "text-body block hover:text-title" do %>
+                    <span><%= FoodRestriction.model_name.human(count: 2) %></span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to food_providers_path, class: "text-body block hover:text-title" do %>
+                    <span><%= FoodProvider.model_name.human(count: 2) %></span>
+                  <% end %>
+                </li>
               <% end %>
             </ul>
           </div>

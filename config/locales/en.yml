@@ -41,3 +41,7 @@ en:
       editing: Editing %{model}
       none: No %{model} found
       showing: Showing %{model}
+    notices:
+      created: The %{model} was successfully created!
+      updated: The %{model} was successfully updated!
+      destroyed: The %{model} was destroyed.

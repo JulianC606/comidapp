@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :users
   resources :lunches
   resources :participants, param: :barcode
+  resources :food_restrictions
+  resources :food_providers
   resource :session
 
   root "dashboard#index"

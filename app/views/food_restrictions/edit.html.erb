@@ -8,17 +8,14 @@
 
   <%= render "form", food_restriction: @food_restriction %>
 
-  <div>
-    <%= link_to 
-      t('helpers.anchors.show', model: @food_restriction.human_class_name),
-      @food_restriction,
-      class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium"
-    %>
-    |
-    <%= link_to 
-      t('helpers.anchors.back', model: @food_restriction.human_class_name(count: 2)),
-      food_restrictions_path,
-      class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium"
-    %>
-  </div>
+  <%= link_to( 
+        t('helpers.anchors.show', model: @food_restriction.human_class_name),
+        @food_restriction,
+        class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium"
+      ) %>
+  <%= link_to( 
+        t('helpers.anchors.back', model: @food_restriction.human_class_name(count: 2)),
+        food_restrictions_path,
+        class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium"
+      ) %>
 </div>

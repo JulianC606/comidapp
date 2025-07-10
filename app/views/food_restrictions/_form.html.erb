@@ -1,4 +1,4 @@
-<%= form_with(model: food_restriction) do |form| %>
+<%= form_with(model: food_restriction, class: 'contents') do |form| %>
   <% if food_restriction.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
       <h2>
@@ -15,12 +15,12 @@
 
   <div class="my-5">
     <%= form.label :name %>
-    <%= form.text_field :name, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": test.errors[:name].none?, "border-red-400 focus:outline-red-600": test.errors[:name].any?}] %>
+    <%= form.text_field :name, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": food_restriction.errors[:name].none?, "border-red-400 focus:outline-red-600": food_restriction.errors[:name].any?}] %>
   </div>
 
   <div class="my-5">
     <%= form.label :kind %>
-    <%= form.text_field :kind, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": test.errors[:kind].none?, "border-red-400 focus:outline-red-600": test.errors[:kind].any?}] %>
+    <%= form.text_field :kind, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": food_restriction.errors[:kind].none?, "border-red-400 focus:outline-red-600": food_restriction.errors[:kind].any?}] %>
   </div>
 
   <div class="inline">
