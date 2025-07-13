@@ -3,19 +3,31 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <% content_for :title, "Users" %>
+  <% content_for :title, @users.model_name.human(count: 2) %>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Users</h1>
-    <%= link_to "New user", new_user_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="font-bold text-4xl text-primary-600"><%= @users.model_name.human(count: 2) %></h1>
+    <%= link_to "New user", new_user_path, class: "btn" %>
   </div>
 
-  <div id="users" class="min-w-full">
-    <% @users.each do |user| %>
-      <%= render user %>
-      <p>
-        <%= link_to "Show this user", user, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
-    <% end %>
-  </div>
+  <%= turbo_frame_tag :users, class: 'block overflow-x-auto w-full' do %>
+    <table class="border-collapse table-auto w-full">
+      <thead class="text-title sticky top-0 bg-primary-100 ">
+        <tr class="*:font-medium *:text-sm *:p-3 *:text-left *:text-primary-600">
+          <th class="rounded-l-md"><%= @users.human_attribute_name('id') %></th>
+          <th><%= @users.human_attribute_name('name') %></th>
+          <th><%= @users.human_attribute_name('email_address') %></th>
+          <th><%= @users.human_attribute_name('admin') %></th>
+          <th><%= @users.human_attribute_name('locale') %></th>
+          <th class="rounded-r-md"><%= t('actions') %></th>
+        </tr>
+      </thead>
+      <tbody class="text-sm" id='users'>
+        <% @users.each do |user| %>
+          <%= render user %>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @users %>
+  <% end %>
 </div>

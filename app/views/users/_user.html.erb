@@ -1,2 +1,13 @@
-<div id="<%= dom_id user %>">
-</div>
+
+<tr id="<%= dom_id user %>" class="*:p-3 *:border-b">
+  <td><%= user.id %></td>
+  <td><%= user.name %></td>
+  <td><%= user.email_address %></td>
+  <td><%= t(user.admin?, scope: 'helpers.affirmations') %></td>
+  <td><%= t(user.locale, scope: 'helpers.languages') %></td>
+  <td class="flex gap-1">
+    <%= link_to t('edit'), edit_user_path(user), class: 'btn sm alt', data: { turbo_frame: '_top'} %>
+    <%= button_to t('delete'), user, method: :delete, class: 'btn sm alt' %>
+  </td>
+</tr>
+

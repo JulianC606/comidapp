@@ -1,11 +1,15 @@
-<% content_for :title, "New participant" %>
+<% content_for :title, t('helpers.titles.new', model: @participant.human_class_name) %>
 
-<h1>New participant</h1>
+<div class="w-full">
+  <h1 class="font-bold text-4xl text-primary-600">
+    <%= t('helpers.titles.new', model: @participant.human_class_name) %>
+  </h1>
 
-<%= render "form", participant: @participant %>
+  <%= render "form", participant: @participant %>
 
-<br>
-
-<div>
-  <%= link_to "Back to participants", participants_path %>
+  <%= link_to(
+        t('helpers.anchors.back', model: @participant.human_class_name(count: 2)),
+        participants_path,
+        class: "ml-2 btn alt"
+      ) %>
 </div>

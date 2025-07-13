@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   resources :users
   resources :lunches
-  resources :participants, param: :barcode
-  resources :food_restrictions
+  resources :participants, param: :barcode do
+    get :search, on: :collection, controller: "participants/searchs", action: :new
+    post :search, on: :collection, controller: "participants/searchs", action: :create
+    resources :lunches, only: %i[ new ]
+  end
+  resources :food_restrictions, except: %i[ show ]
   resources :food_providers
   resource :session
 
-  root "dashboard#index"
+  root "participants/searchs#new"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

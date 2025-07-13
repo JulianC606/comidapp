@@ -1,0 +1,7 @@
+<li>
+  <%= link_to_unless_current content, url, class: "block hover:text-primary-600" do %>
+    <strong class="text-primary-600">
+      <%= content %>
+    </strong>
+  <% end %>
+</li>

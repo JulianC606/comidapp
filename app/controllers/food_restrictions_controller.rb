@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 class FoodRestrictionsController < ApplicationController
-  before_action :set_food_restriction, only: %i[ show edit update destroy ]
+  before_action :set_food_restriction, only: %i[ edit update destroy ]
 
   def index
     @food_restrictions = FoodRestriction.page(params[:page])
   end
-
-  def show; end
 
   def new
     @food_restriction = FoodRestriction.new
@@ -19,7 +17,7 @@ class FoodRestrictionsController < ApplicationController
     @food_restriction = FoodRestriction.new(food_restriction_params)
 
     if @food_restriction.save
-      redirect_to food_restrictions_path, notice: I18n.t("helpers.notices.created", model: @food_restriction.human_class_name)
+      redirect_to food_restrictions_path, notice: I18n.t("helpers.notices.created")
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +25,7 @@ class FoodRestrictionsController < ApplicationController
 
   def update
     if @food_restriction.update(food_restriction_params)
-      redirect_to @food_restriction, notice: I18n.t("helpers.notices.updated", model: @food_restriction.human_class_name)
+      redirect_to food_restrictions_path, notice: I18n.t("helpers.notices.updated")
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,7 +34,7 @@ class FoodRestrictionsController < ApplicationController
   def destroy
     @food_restriction.destroy!
 
-    redirect_to food_restrictions_path, status: :see_other, notice: I18n.t("helpers.notices.destroyed", model: @food_restriction.human_class_name)
+    redirect_to food_restrictions_path, status: :see_other, notice: I18n.t("helpers.notices.destroyed")
   end
 
   private

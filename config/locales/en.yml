@@ -42,6 +42,6 @@ en:
       none: No %{model} found
       showing: Showing %{model}
     notices:
-      created: The %{model} was successfully created!
-      updated: The %{model} was successfully updated!
-      destroyed: The %{model} was destroyed.
+      created: 🎉 %{model} saved successfully!
+      updated: 🎉 %{model} saved successfully!
+      destroyed: 🗑️ %{model} deleted successfully.

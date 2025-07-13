@@ -152,22 +152,30 @@ es:
       create: Crear %{model}
       submit: Guardar %{model}
       update: Actualizar %{model}
+      search: Buscar %{model}
     anchors:
-      new: Nuevo/a %{model}
-      edit: Editar este/a %{model}
-      show: Mostrar este/a %{model}
+      new: Crear %{model}
+      edit: Editar %{model}
+      show: Mostrar %{model}
       back: Volver a %{model}
     actions:
       destroy: Eliminar %{model}
     titles:
-      new: Nuevo/a %{model}
+      new: Crear %{model}
       editing: Editando %{model}
       none: No se encontraron %{model}
       showing: Mostrando un %{model}
+      search: Buscar %{model}
     notices:
-      created: ¡El/la %{model} se creó exitósamente!
-      updated: ¡El/la %{model} se actualizó exitósamente!
-      destroyed: Se eliminó el/la %{model} corréctamente.
+      created: 🎉 ¡Registro exitoso!
+      updated: 🎉 ¡Actualización exitosa!
+      destroyed: 🗑️ Se borro el registro.
+    affirmations:
+      yes: Sí
+      no: 'No'
+    languages:
+      es: Español
+      en: Inglés
   number:
     currency:
       format:
@@ -231,7 +239,18 @@ es:
   time:
     am: am
     formats:
-      default: "%A, %-d de %B de %Y %H:%M:%S %z"
+      default: "%d/%m/%y %H:%M %P"
       long: "%-d de %B de %Y %H:%M"
       short: "%-d de %b %H:%M"
     pm: pm
+  views:
+    pagination:
+      next: Sig.
+      last: Últ.
+      first: Prim
+      previous: Ant.
+      truncate: '...'
+  actions: Acciones
+  delete: Borrar
+  edit: Editar
+  show: Ver

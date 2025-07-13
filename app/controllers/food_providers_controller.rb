@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 class FoodProvidersController < ApplicationController
-  before_action :set_food_provider, only: %i[ show edit update destroy ]
+  before_action :set_food_provider, only: %i[ edit update destroy ]
 
   def index
     @food_providers = FoodProvider.page(params[:page])
   end
-
-  def show; end
 
   def new
     @food_provider = FoodProvider.new
@@ -19,7 +17,7 @@ class FoodProvidersController < ApplicationController
     @food_provider = FoodProvider.new(food_provider_params)
 
     if @food_provider.save
-      redirect_to food_providers_path, notice: I18n.t("helpers.notices.created", model: @food_provider.human_class_name)
+      redirect_to food_providers_path, notice: I18n.t("helpers.notices.created")
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +25,7 @@ class FoodProvidersController < ApplicationController
 
   def update
     if @food_provider.update(food_provider_params)
-      redirect_to @food_provider, notice: I18n.t("helpers.notices.updated", model: @food_provider.human_class_name)
+      redirect_to food_providers_path, notice: I18n.t("helpers.notices.updated")
     else
       render :edit, status: :unprocessable_entity
     end
@@ -35,8 +33,7 @@ class FoodProvidersController < ApplicationController
 
   def destroy
     @food_provider.destroy!
-
-    redirect_to food_providers_path, status: :see_other, notice: I18n.t("helpers.notices.destroyed", model: @food_provider.human_class_name)
+    redirect_to food_providers_path, status: :see_other, notice: I18n.t("helpers.notices.destroyed")
   end
 
   private

@@ -9,8 +9,10 @@
 #   end
 
 useradmin = Rails.application.credentials.useradmin.presence || { 'email' => 'admin@example.com', 'password' => '123QWEqwe!' }
-User.create!(email_address: useradmin['email'], password: useradmin['password'], admin: true, locale: :es) if User.count.zero?
+User.create!(email_address: useradmin['email'], password: useradmin['password'], admin: true, locale: :es) unless User.exists?(email_address: useradmin['email'])
+User.create!(email_address: 'user@example.com', password: '123QWEqwe!', admin: false, locale: :es) unless User.exists?(email_address: 'user@example.com')
 
-food_provider = FoodProvider.create(name: 'Base', default: true)
 
-Participant.create!(name: 'John Doe', barcode: '1', role: 'speaker', food_provider:)
+food_provider = FoodProvider.create(name: 'Base', default: true) unless FoodProvider.exists?(name: 'Base')
+
+Participant.create!(name: 'John Doe', barcode: '1', role: 'speaker', food_provider:) unless Participant.exists?(barcode: '1')

@@ -1,9 +1,11 @@
-<%= form_with(model: participant) do |form| %>
+<%= form_with(model: participant, class: 'contents') do |form| %>
   <% if participant.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(participant.errors.count, "error") %> prohibited this participant from being saved:</h2>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2>
+        <%= t('errors.template.header', count: participant.errors.count, model: participant.class.model_name.human) %>
+      </h2>
 
-      <ul>
+      <ul class="list-disc ml-6">
         <% participant.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -11,17 +13,73 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="my-5">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": participant.errors[:name].none?, "border-red-400 focus:outline-red-600": participant.errors[:name].any?}] %>
   </div>
 
-  <div>
-    <%= form.label :restrictions, style: "display: block" %>
-    <%= form.text_field :restrictions %>
+  <div class="my-5">
+    <%= form.label :barcode %>
+    <%= form.text_field :barcode, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": participant.errors[:barcode].none?, "border-red-400 focus:outline-red-600": participant.errors[:barcode].any?}] %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="my-5">
+    <%= form.label :welcome_kit %>
+    <%= form.checkbox :welcome_kit, 
+                      class: [
+                        "block shadow rounded-md border outline-none mt-2 h-5 w-5", 
+                        {
+                          "border-gray-400 focus:outline-blue-600": participant.errors[:welcome_kit].none?,
+                          "border-red-400 focus:outline-red-600": participant.errors[:welcome_kit].any?
+                        }
+                      ] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :role %>
+    <%= form.select :role,
+                    Participant.humanized_roles,
+                    {},
+                    class: [
+                      "block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full",
+                      {
+                        "border-gray-400 focus:outline-blue-600" => participant.errors[:role].none?,
+                        "border-red-400 focus:outline-red-600"  => participant.errors[:role].any?
+                      }
+                    ] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :food_provider_id %>
+    <%= form.select :food_provider_id,
+                    FoodProvider.pluck(:name, :id),
+                    {},
+                    class: [
+                      "block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full",
+                      {
+                        "border-gray-400 focus:outline-blue-600" => participant.errors[:role].none?,
+                        "border-red-400 focus:outline-red-600"  => participant.errors[:role].any?
+                      }
+                    ] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :food_restriction_ids %>
+    <%= form.select :food_restriction_ids,
+                 FoodRestriction.pluck(:name, :id),
+                 {},
+                 multiple: true,
+                 size: 5,
+                 class: [
+                   "block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full",
+                   {
+                     "border-gray-400 focus:outline-blue-600" => participant.errors[:role].none?,
+                     "border-red-400 focus:outline-red-600"  => participant.errors[:role].any?
+                   }
+                 ] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "btn" %>
   </div>
 <% end %>

@@ -1,13 +1,17 @@
-<div id="<%= dom_id food_provider %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">
-      <%= food_provider.class.human_attribute_name(:name) %>
-    </strong>
+<tr id="<%= dom_id food_provider %>" class="*:p-3 *:border-b">
+  <td><%= food_provider.id %></td>
+  <td>
     <%= food_provider.name %>
     <% if food_provider.default? %>
-      <strong class="ms-2 py-1 px-1.5 rounded-xl bg-gray-50 text-blue-500 font-semibold text-sm">
+      <strong class="ms-1 rounded-md py-1 px-1.5 bg-primary-100 text-primary-500 font-semibold text-sm">
         <%= food_provider.class.human_attribute_name(:default) %>
       </strong>
     <% end %>
-  </p>
-</div>
+  </td>
+  <td><%= food_provider.participants_count %></td>
+  <td class="flex gap-1">
+    <%= link_to t('edit'), edit_food_provider_path(food_provider), class: 'btn sm alt', data: { turbo_frame: '_top'} %>
+    <%= button_to t('delete'), food_provider, method: :delete, class: 'btn sm alt' %>
+  </td>
+</tr>
+

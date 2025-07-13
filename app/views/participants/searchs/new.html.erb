@@ -1,0 +1,27 @@
+<% content_for :title, t('helpers.titles.search', model: Participant.model_name.human) %>
+
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice">
+      <%= notice %>
+    </p>
+  <% end %>
+  <h1 class="font-bold text-4xl text-primary-600">
+    <%= t('helpers.titles.search', model: Participant.model_name.human) %>
+  </h1>
+  <%= render layout: 'scanner' do %>
+    <%= form_with url: search_participants_path, scope: :participant, method: :post, class: 'mt-4 w-full' do |form| %>
+      <div class="field">
+        <%= form.label :barcode, Participant.human_attribute_name('barcode'), class: 'text-title' %>
+        <%= form.text_field :barcode, 
+                            class: "block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full",
+                            data: { scanner_target: :result },
+                            required: true  %>
+      </div>
+      <div class="flex justify-end gap-4 mt-4">
+        <%= form.button t('.clear'), class: "ml-2 btn alt", data: { action: "scanner#clear:prevent" } %>
+        <%= form.submit t('helpers.submit.search', model: Participant.model_name.human), class: "btn" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -1,7 +1,7 @@
 <% content_for :title, t('helpers.titles.new', model: @food_provider.human_class_name) %>
 
 <div class="w-full">
-  <h1 class="font-bold text-4xl">
+  <h1 class="font-bold text-4xl text-primary-600">
     <%= t('helpers.titles.new', model: @food_provider.human_class_name) %>
   </h1>
 
@@ -10,6 +10,6 @@
   <%= link_to(
         t('helpers.anchors.back', model: @food_provider.human_class_name(count: 2)),
         food_providers_path,
-        class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium"
+        class: "ml-2 btn alt"
       ) %>
 </div>

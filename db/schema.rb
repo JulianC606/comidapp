@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_09_232342) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_13_075549) do
   create_table "food_providers", force: :cascade do |t|
     t.string "name"
     t.boolean "default", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "participants_count"
   end
 
   create_table "food_restriction_participants", force: :cascade do |t|
@@ -42,6 +43,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_09_232342) do
     t.string "kind", default: "without_restrictions"
     t.date "delivery_date"
     t.integer "food_provider_id", null: false
+    t.datetime "delivered_at"
     t.index ["food_provider_id"], name: "index_lunches_on_food_provider_id"
     t.index ["participant_id"], name: "index_lunches_on_participant_id"
     t.index ["user_id"], name: "index_lunches_on_user_id"

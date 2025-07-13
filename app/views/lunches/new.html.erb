@@ -1,9 +1,16 @@
 <% content_for :title, t('.title') %>
 
-<h1><%= t('.title') %></h1>
+<div class="w-full">
+  <h1 class="font-bold text-4xl text-primary-600">
+    <%= t('helpers.titles.new', model: @lunch.human_class_name) %>
+  </h1>
 
-<%= render "form", lunch: @lunch, edit_user: false do %>
-  <%= link_to lunches_path, class: 'btn variant-outlined sz-md' do %>
-    <span class="btn-title"><%= t '.discard' %></span>
-  <% end %>
-<% end %>
+  <%= render "form", lunch: @lunch, participant: @participant%>
+  <% if Current.user.admin? %>
+    <%= link_to(
+        t('helpers.anchors.back', model: @lunch.human_class_name(count: 2)),
+        lunches_path,
+        class: "ml-2 btn alt"
+      ) %>
+    <% end %>
+</div>

@@ -41,6 +41,7 @@ es:
     participant:
       delivered: Entragado
       deliver: Entregar
+      revert: Revertir entrega
     show:
       actions: Acciones
       back_to_participants: Volver

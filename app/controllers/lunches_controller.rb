@@ -1,11 +1,11 @@
 class LunchesController < ApplicationController
   before_action :set_lunch, only: %i[ show edit update destroy ]
   before_action :set_participant, only: %i[ new ]
+  before_action :set_new_lunch, only: %i[ new ]
+  before_action :set_lunches, only: %i[ index ]
 
   # GET /lunches or /lunches.json
-  def index
-    @lunches = Lunch.page(params[:page])
-  end
+  def index; end
 
   # GET /lunches/1 or /lunches/1.json
   def show
@@ -13,7 +13,6 @@ class LunchesController < ApplicationController
 
   # GET /lunches/new
   def new
-    @lunch = Lunch.new
   end
 
   # GET /lunches/1/edit
@@ -24,14 +23,10 @@ class LunchesController < ApplicationController
   def create
     @lunch = Lunch.new(lunch_params)
 
-    respond_to do |format|
-      if @lunch.save
-        format.html { redirect_to lunches_path, notice: "Lunch was successfully created." }
-        format.json { render :show, status: :created, location: @lunch }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @lunch.errors, status: :unprocessable_entity }
-      end
+    if @lunch.save
+      redirect_to root_path, notice: t("helpers.notices.created", model: @lunch.human_class_name)
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -52,10 +47,9 @@ class LunchesController < ApplicationController
   def destroy
     @lunch.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to lunches_path, status: :see_other, notice: "Lunch was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to lunches_path(participant_id: @lunch.participant.barcode),
+                status: :see_other,
+                notice: t("helpers.notices.destroyed", model: @lunch.human_class_name)
   end
 
   private
@@ -65,11 +59,27 @@ class LunchesController < ApplicationController
     end
 
     def set_participant
-      @participant = Participant.find_by(barcode: params.expect(lunch: [ :participant_barcode ])[:participant_barcode])
+      @participant = Participant.find_by(barcode: params[:participant_barcode]) if params[:participant_barcode].present?
+      @participant ||= Participant.find_by(barcode: params.expect(lunch: [ :participant_barcode ])[:participant_barcode])
     end
 
     # Only allow a list of trusted parameters through.
     def lunch_params
-      params.expect(lunch: [ :participant_id, :user_id, :kind, :delivery_date ])
+      params.expect(lunch: %i[ participant_id user_id food_provider_id delivered_at kind ])
+    end
+
+    def set_new_lunch
+      @lunch = Lunch.new(
+        participant_id: @participant.id,
+        user_id: Current.user.id,
+        delivered_at: Time.current,
+        food_provider_id: @participant.food_provider_id || FoodProvider.default.id
+      )
+    end
+
+    def set_lunches
+      @lunches = Lunch.includes(:participant, :user).order(created_at: :desc)
+      @lunches = @lunches.where(participant_id: params[:participant_id]) if params[:participant_id].present?
+      @lunches = @lunches.page(params[:page])
     end
 end

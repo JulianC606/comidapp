@@ -1,45 +1,37 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Lunches" %>
+<div class="w-full">
+  <h1 class="font-bold text-4xl text-primary-600 mb-6"><%= Lunch.model_name.human(count: 2) %></h1>
 
-<h1 class="text-3xl font-semibold text-title mb-4"><%= Lunch.model_name.human(count: 2) %></h1>
+  <%= turbo_stream_from 'lunches' %>
 
-<%= render layout: 'scanner' do %>
-  <%= form_with url: new_lunch_path, scope: :lunch, method: :get, class: 'mt-4 w-full' do |form| %>
-    <div class="field">
-      <%= form.label :participant_barcode, Participant.human_attribute_name('barcode'), class: 'text-title' %>
-      <%= form.text_field :participant_barcode, class: 'input variant-mixed sz-md', data: { scanner_target: :result }, required: true  %>
-    </div>
-    <div class="flex justify-end gap-4 mt-4">
-      <%= form.button t('.clear'), class: 'btn variant-soft sz-md', data: { action: "scanner#clear:prevent" } %>
-      <%= form.submit class: 'btn variant-primary sz-md' %>
-    </div>
+  <%= turbo_frame_tag :lunches, class: 'block overflow-x-auto w-full' do %>
+    <table class="border-collapse table-auto w-full">
+      <thead class="text-title sticky top-0 bg-primary-100 ">
+        <tr class="*:font-medium *:text-sm *:p-3 *:text-left *:text-primary-600">
+          <% if params[:participant_id].present? %>
+            <th class="rounded-l-md"><%= Lunch.human_attribute_name('kind') %></th>
+          <% else %>
+            <th class="rounded-l-md"><%= Participant.human_attribute_name('name') %></th>
+            <th><%= Lunch.human_attribute_name('kind') %></th>
+          <% end %>
+          <% if Current.user.admin? %>
+            <th><%= Lunch.human_attribute_name('delivered_at') %></th>
+            <th><%= Lunch.human_attribute_name('user') %></th>
+            <th class="rounded-r-md"><%= t '.actions' %></th>
+          <% else %>
+            <th class="rounded-r-md">
+              <%= Lunch.human_attribute_name('delivered_at') %>
+            </th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody class="text-sm" id='lunches'>
+        <% @lunches.each do |lunch, index| %>
+          <%= render lunch, participant: params[:participant_id].present? %>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @lunches %>
   <% end %>
-<% end %>
 
-<%= turbo_stream_from 'lunches' %>
-<div class="card variant-mixed w-full mt-8 overflow-y-auto" data-shade="900">
-  <table class="border-collapse table-auto dark:[--ui-soft-bg:var(--ui-bg)] w-full" data-rounded="medium">
-    <thead class="text-title sticky top-0 bg-ui-soft dark:bg-gray-925">
-      <tr class="*:font-medium *:text-sm *:p-3 *:text-left">
-        <th class="rounded-l-[--card-radius]"><%= Participant.human_attribute_name('name') %></th>
-        <th><%= Lunch.human_attribute_name('kind') %></th>
-        <% if Current.user.admin? %>
-          <th><%= Lunch.human_attribute_name('user') %></th>
-        <% end %>
-        <th class="<%=class_names('rounded-r-[--card-radius]': !Current.user.admin?)%>">
-          <%= Lunch.human_attribute_name('delivery_date') %>
-        </th>
-        <% if Current.user.admin? %>
-          <th class="rounded-r-[--card-radius]"><%= t '.actions' %></th>
-        <% end %>
-      </tr>
-    </thead>
-    <tbody class="text-sm" id='lunches'>
-      <% @lunches.each do |lunch, index| %>
-        <%= render lunch, participant: false %>
-      <% end %>
-    </tbody>
-  </table>
 </div>
-<%= paginate @lunches, params: { format: :turbo_stream } %>

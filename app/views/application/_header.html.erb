@@ -1,48 +1,30 @@
 <header data-controller="toggler">
-  <nav id="navbar" class="group fixed z-20 w-full border-b border-dashed bg-white backdrop-blur md:relative dark:bg-gray-950/50 lg:dark:bg-transparent top-0">
+  <nav id="navbar" class="group fixed z-20 w-full shadow-md shadow-primary-600/25 bg-white backdrop-blur md:relative top-0">
     <div class="m-auto max-w-5xl px-6">
-      <div class="flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+      <div class="flex flex-col items-stretch justify-between gap-6 py-3 lg:gap-0 lg:py-4">
         <div class="flex w-full justify-between lg:w-auto">
-          <%= link_to 'Comidapp', root_path, class: "flex items-center space-x-2 text-2xl" %>
-          <button id="menu-btn" aria-label="open menu" class="btn variant-ghost sz-md icon-only relative z-20 -mr-2.5 block cursor-pointer lg:hidden" data-action="toggler#toggle:prevent">
+          <%= link_to_unless_current image_tag('logo.png', alt: 'WSDC Logo', class: 'w-32 lg:w-48'), root_path, class: "flex items-center space-x-2 lg:mb-4" do %>
+            <%= image_tag 'logo.png', alt: 'WSDC Logo', class: 'w-32 lg:w-48 lg:mb-4' %>
+          <% end %>
+          <button id="menu-btn" aria-label="open menu" class="relative z-20 -mr-2.5 block cursor-pointer lg:hidden" data-action="toggler#toggle:prevent">
             <%= show_svg 'icons/menu' %>
           </button>
         </div>
         <div data-toggler-target="content" 
-             class="bg-ui mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-gray-300/20 group-data-[state=active]:block md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none lg:group-data-[state=active]:flex dark:shadow-none dark:lg:bg-transparent">
-          <div class="lg:pr-4">
-            <ul class="space-y-6 text-base lg:flex lg:gap-6 lg:space-y-0 lg:text-sm">
-              <li>
-                <%= link_to lunches_path, class: "text-body block hover:text-title" do %>
-                  <span><%= t('.lunches') %></span>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to participants_path, class: "text-body block hover:text-title" do %>
-                  <span><%= t('.participants') %></span>
-                <% end %>
-              </li>
-              <% if Current.user.admin? %>
-                <li>
-                  <%= link_to users_path, class: "text-body block hover:text-title" do %>
-                  <span><%= t('.users') %></span>
-                <% end %>
-                </li>
-                <li>
-                  <%= link_to food_restrictions_path, class: "text-body block hover:text-title" do %>
-                    <span><%= FoodRestriction.model_name.human(count: 2) %></span>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to food_providers_path, class: "text-body block hover:text-title" do %>
-                    <span><%= FoodProvider.model_name.human(count: 2) %></span>
-                  <% end %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-          <div class="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:border-l lg:pl-6">
-            <%= button_to session_path, method: :delete, class: 'btn variant-neutral sz-md lg:sz-xs w-full' do %>
+             class="mb-6 hidden w-full flex-wrap items-center justify-between group-data-[state=active]:block lg:m-0 lg:flex lg:gap-6 lg:space-y-0 lg:group-data-[state=active]:flex lg:w-full">
+          <ul class="space-y-6 text-base lg:flex lg:gap-6 lg:space-y-0 lg:text-sm">
+            <%= render 'nav_link', content: t('helpers.titles.search', model: Participant.model_name.human), url: root_path %>
+
+            <% if Current.user.admin? %>
+              <%= render 'nav_link', content: Lunch.model_name.human(count: 2), url: lunches_path %>
+              <%= render 'nav_link', content: User.model_name.human(count: 2), url: users_path %>
+              <%= render 'nav_link', content: FoodRestriction.model_name.human(count: 2), url: food_restrictions_path %>
+              <%= render 'nav_link', content: FoodProvider.model_name.human(count: 2), url: food_providers_path %>
+              <%= render 'nav_link', content: Participant.model_name.human(count: 2), url: participants_path %>
+            <% end %>
+          </ul>
+          <div class="flex flex-col space-y-3 w-full lg:w-auto mt-6 lg:mt-0">
+            <%= button_to session_path, method: :delete, class: 'btn alt sm w-full lg:w-auto' do %>
               <%= t('.logout') %>
             <% end %>
           </div>

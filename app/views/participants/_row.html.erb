@@ -1,0 +1,10 @@
+<tr id="<%= dom_id participant %>" class="*:p-3 *:border-b">
+  <td><%= participant.barcode %></td>
+  <td><%= participant.name %></td>
+  <td><%= participant.human_attribute_name("role/#{participant.role}") %></td>
+  <td><%= participant.food_provider_name %></td>
+  <td class="w-fit">
+    <%= link_to t('show'), participant_path(participant.barcode), class: 'btn sm alt mb-1', data: { turbo_frame: '_top'} %>
+    <%= link_to t('edit'), edit_participant_path(participant.barcode), class: 'btn sm alt', data: { turbo_frame: '_top'} %>
+  </td>
+</tr>

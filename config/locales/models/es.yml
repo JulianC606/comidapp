@@ -2,8 +2,8 @@ es:
   activerecord:
     models:
       lunch:
-        one: Almuerzo
-        other: Almuerzos
+        one: Comida
+        other: Comidas
       participant:
         one: Participante
         other: Participantes
@@ -21,10 +21,26 @@ es:
         barcode: Código de barras
         name: Nombre
         welcome_kit: Kit de bienvenida
+        food_provider: Proveedor
+        food_provider_id: Proveedor
+        role: Rol
+        role/speaker: Orador
+        role/adjudicator: Juez
+        role/volunteer: Voluntario
+        role/host: Host team
+        role/academic_team: Equipo Académico
+        role/observer: Observador
+        food_restriction_ids: Restricciones Alimenticias
       lunch:
-        delivery_date: Fecha
+        delivered_at: Fecha de entrega
         participants: Participantes
         user: Usuario
+        kind: Tipo
+        food_provider_id: Proveedor
+        kind/other: Otro
+        kind/breakfast: Desayuno
+        kind/dinner: Cena
+        kind/lunch: Almuerzo
       user:
         locale/es: Español
         locale/en: English
@@ -35,6 +51,10 @@ es:
       food_provider:
         name: Nombre
         default: Predeterminado
+        participants_count: '# Participantes'
       food_restriction:
         name: Nombre
         kind: Tipo
+        kind/other: Otro
+        kind/religious: Religioso
+        kind/allergy: Alergia

@@ -1,14 +1,9 @@
-<div id="<%= dom_id food_restriction %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">
-      <%= food_restriction.class.human_attribute_name(:name) %>
-    </strong>
-    <%= food_restriction.name %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">
-      <%= food_restriction.class.human_attribute_name(:kind) %>
-    </strong>
-    <%= food_restriction.kind %>
-  </p>
-</div>
+<tr id="<%= dom_id food_restriction %>" class="*:p-3 *:border-b">
+  <td><%= food_restriction.id %></td>
+  <td><%= food_restriction.name %></td>
+  <td><%= food_restriction.human_attribute_name("kind/#{food_restriction.kind}") %></td>
+  <td class="flex gap-1">
+    <%= link_to t('edit'), edit_food_restriction_path(food_restriction), class: 'btn sm alt', data: { turbo_frame: '_top'} %>
+    <%= button_to t('delete'), food_restriction, method: :delete, class: 'btn sm alt' %>
+  </td>
+</tr>

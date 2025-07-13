@@ -1,35 +1,62 @@
-<p style="color: green"><%= notice %></p>
-  <%= link_to t('.back_to_participants'), participants_path, class: "block text-right w-full mb-8" %>
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice">
+      <%= notice %>
+    </p>
+  <% end %>
 
-<div class="flex flex-col w-full items-stretch lg:flex-row lg:items-start gap-8">
-  <%= render @participant %>
+  <div class="flex justify-between items-center mb-6 gap-2 flex-wrap">
+    <div>
+      <h1 class="font-bold text-4xl text-primary-600 mb-2">
+        <%= @participant.name %>
+      </h1>
+      <% if @participant.food_restrictions.any? %>
+        <div>
+          <% @participant.food_restrictions.each do |restriction| %>
+            <span class="<%= class_names(
+              'rounded-xl px-2 py-1 ms-1 font-medium ', 
+                                'bg-red-600 text-white': restriction.allergy?,
+                                'bg-gray-100 text-gray-950': restriction.other?,
+                                'bg-blue-100 text-blue-950': restriction.religious?
+                              ) %>">
+              <%= restriction.name %>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to(
+          t('helpers.anchors.new', model: Lunch.model_name.human),
+          new_participant_lunch_path(@participant.barcode),
+          class: "btn"
+        ) %>
+  </div>
 
-  <div class="card variant-mixed lg:grow overflow-y-auto" data-shade="900">
-    <h2 class="text-title">
+  <%= render @participant, type: :show %>
+
+  <div class="flex gap-2 my-6 justify-end flex-wrap">
+    <% if Current.user.admin? %>
+      <%= link_to(
+            t('helpers.anchors.edit', model: @participant.model_name.human),
+            edit_participant_path(@participant.barcode),
+            class: "btn alt"
+          ) %>
+      <%= link_to( 
+            t('helpers.anchors.back', model: @participant.model_name.human(count: 2)),
+            participants_path,
+            class: "btn alt"
+          ) %>
+    <% end %>
+  </div>
+
+
+  <div class="bg-white shadow-lg border border-gray-50 rounded-md p-6 flex flex-col justify-between overflow-x-auto">
+    <h2 class="font-bold text-2xl">
       <%= Lunch.model_name.human(count: 2) %>
     </h2>
-    <table class="border-collapse table-auto dark:[--ui-soft-bg:var(--ui-bg)] w-full" data-rounded="medium">
-      <thead class="text-title sticky top-0 bg-ui-soft dark:bg-gray-925">
-        <tr class="*:font-medium *:text-sm *:p-3 *:text-left">
-          <th class="rounded-l-[--card-radius]">
-            <%= Lunch.human_attribute_name('delivery_date') %>
-          </th>
-          <th class="<%=class_names('rounded-r-[--card-radius]': !Current.user.admin?)%>">
-            <%= Lunch.human_attribute_name('kind') %></th>
-          <% if Current.user.admin? %>
-            <th><%= Lunch.human_attribute_name('user') %></th>
-          <% end %>
-          <% if Current.user.admin? %>
-            <th class="rounded-r-[--card-radius]"><%= t '.actions' %></th>
-          <% end %>
-        </tr>
-      </thead>
-      <tbody class="text-sm" id='lunches'>
-        <% @lunches.each do |lunch, index| %>
-          <%= render lunch, participant: true %>
-        <% end %>
-      </tbody>
-    </table>
+    <%= turbo_frame_tag :lunches, lazy: true, src: lunches_path(participant_id: @participant.id) %>
+
   </div>
+
 </div>
 

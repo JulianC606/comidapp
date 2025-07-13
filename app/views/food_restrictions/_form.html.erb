@@ -20,10 +20,19 @@
 
   <div class="my-5">
     <%= form.label :kind %>
-    <%= form.text_field :kind, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": food_restriction.errors[:kind].none?, "border-red-400 focus:outline-red-600": food_restriction.errors[:kind].any?}] %>
+    <%= form.select :kind,
+                    FoodRestriction.humanized_kinds,
+                    {},
+                    class: [
+                      "block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full",
+                      {
+                        "border-gray-400 focus:outline-blue-600" => food_restriction.errors[:role].none?,
+                        "border-red-400 focus:outline-red-600"  => food_restriction.errors[:role].any?
+                      }
+                    ] %>
   </div>
 
   <div class="inline">
-    <%= form.submit class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit class: "btn" %>
   </div>
 <% end %>

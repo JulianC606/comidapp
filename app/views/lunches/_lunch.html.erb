@@ -1,16 +1,12 @@
+<%# locals(participant: true) %>
 <tr id="<%= dom_id lunch %>" class="*:p-3 *:border-b">
-  <% if participant %>
-    <td><%= l lunch.delivery_date, format: :short %></td>
-    <td><%= Lunch.human_attribute_name("kind/#{lunch.kind}") %></td>
-  <% else %>
+  <% unless participant %>
     <td><%= lunch.participant_name %></td>
-    <td><%= Lunch.human_attribute_name("kind/#{lunch.kind}") %></td>
-    <td><%= l lunch.delivery_date, format: :short %></td>
   <% end %>
+  <td><%= Lunch.human_attribute_name("kind/#{lunch.kind}") %></td>
+  <td><%= l lunch.delivered_at %></td>
   <% if Current.user.admin? %>
     <td><%= lunch.user_name %></td>
-  <% end %>
-  <% if Current.user.admin? %>
-    <td><%= button_to t('.delete'), lunch, method: :delete %></td>
+    <td><%= button_to t('delete'), lunch, method: :delete, class: 'btn sm alt' %></td>
   <% end %>
 </tr>

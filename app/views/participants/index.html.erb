@@ -1,19 +1,37 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, @participants.model_name.human(count: 2) %>
 
-<% content_for :title, "Participants" %>
-
-<h1 class="text-3xl font-semibold text-title"><%= Participant.model_name.human(count: 2) %></h1>
-
-<%= render layout: 'scanner' do %>
-  <%= form_with url: participants_path, scope: :participant, method: :get, class: 'mt-4 w-full' do |form| %>
-    <div class="field">
-      <%= form.label :barcode, Participant.human_attribute_name('barcode'), class: 'text-title' %>
-      <%= form.text_field :barcode, class: 'input variant-mixed sz-md', data: { scanner_target: :result }, required: true  %>
-    </div>
-    <div class="flex justify-end gap-4 mt-4">
-      <%= form.button t('.clear'), class: 'btn variant-soft sz-md', data: { action: "scanner#clear:prevent" } %>
-      <%= form.submit class: 'btn variant-primary sz-md' %>
-    </div>
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-6 text-green-500 font-medium rounded-md inline-block" id="notice">
+      <%= notice %>
+    </p>
   <% end %>
-<% end %>
+  <div class="flex justify-between items-center flex-wrap mb-6">
+    <h1 class="font-bold text-4xl text-primary-600"><%= @participants.model_name.human(count: 2) %></h1>
+    <%= link_to(
+          t('helpers.anchors.new', model: @participants.model_name.human),
+          new_participant_path,
+          class: "btn"
+        ) %>
+  </div>
 
+  <%= turbo_frame_tag :participants, class: 'block overflow-x-auto w-full' do %>
+    <table class="border-collapse table-auto w-full">
+      <thead class="text-title sticky top-0 bg-primary-100 ">
+        <tr class="*:font-medium *:text-sm *:p-3 *:text-left *:text-primary-600">
+          <th class="rounded-l-md"><%= @participants.human_attribute_name('barcode') %></th>
+          <th><%= @participants.human_attribute_name('name') %></th>
+          <th><%= @participants.human_attribute_name('role') %></th>
+          <th><%= @participants.human_attribute_name('food_provider') %></th>
+          <th class="rounded-r-md"><%= t('actions') %></th>
+        </tr>
+      </thead>
+      <tbody class="text-sm" id='lunches'>
+        <% @participants.each do |participant| %>
+          <%= render 'row', participant: %>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @participants %>
+  <% end %>
+</div>

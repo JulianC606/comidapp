@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: oklch(81.231% 0.10205 355.75);
+  --color-primary-50: oklch(92.835% 0.03595 353.66);
+  --color-primary-100: oklch(88.789% 0.05774 353.39);
+  --color-primary-200: oklch(81.231% 0.10205 355.75);
+  --color-primary-300: oklch(71.739% 0.1628 358.69);
+  --color-primary-400: oklch(64.326% 0.21456 3.1922);
+  --color-primary-500: oklch(58.733% 0.22776 8.8596);
+  --color-primary-600: oklch(48.441% 0.186 8.2275);
+  --color-primary-700: oklch(37.752% 0.14278 7.3331);
+  --color-primary-800: oklch(26.042% 0.09482 4.8604);
+  --color-primary-900: oklch(13.115% 0.04017 355.61);
+  --color-primary-950: oklch(0% 0 none);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+
+
+@layer components {
+  .btn {
+    @apply rounded-md px-3.5 py-2.5 bg-primary-500 hover:bg-primary-600 text-white inline-block font-medium cursor-pointer;
+  }
+
+  .btn.sm {
+    @apply px-2.5 py-1.5
+  }
+
+  .btn.alt {
+    @apply bg-gray-200 hover:bg-gray-100 text-gray-600
+  }
+
+}
