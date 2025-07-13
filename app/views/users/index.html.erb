@@ -7,7 +7,7 @@
 
   <div class="flex justify-between items-center mb-6">
     <h1 class="font-bold text-4xl text-primary-600"><%= @users.model_name.human(count: 2) %></h1>
-    <%= link_to "New user", new_user_path, class: "btn" %>
+    <%= link_to t('helpers.anchors.new', model: @users.model_name.human), new_user_path, class: "btn" %>
   </div>
 
   <%= turbo_frame_tag :users, class: 'block overflow-x-auto w-full' do %>
