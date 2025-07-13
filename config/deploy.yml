@@ -2,7 +2,7 @@
 service: wsdcfa
 
 # Name of the container image.
-image: julainc606/wsdcfa
+image: julianc606/wsdcfa
 
 # Deploy to these servers.
 servers:
