@@ -25,7 +25,7 @@ class Lunch < ApplicationRecord
     return if kind.present?
     return self.kind = "breakfast" if Time.current.at_morning?
     return self.kind = "lunch" if Time.current.at_afternoon?
-    return self.kind = "dinned" if Time.current.at_evening?
+    return self.kind = "dinner" if Time.current.at_evening?
 
     self.kind = "other"
   end
