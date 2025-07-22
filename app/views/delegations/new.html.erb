@@ -1,0 +1,13 @@
+<% content_for :title, t('helpers.titles.new', model: @delegation.human_class_name) %>
+
+<div class="w-full">
+  <h1 class="font-bold text-4xl"><%= t('helpers.titles.new', model: @delegation.human_class_name) %></h1>
+
+  <%= render "form", delegation: @delegation %>
+
+  <%= link_to(
+        t('helpers.anchors.back', model: @delegation.human_class_name(count: 2)),
+        delegations_path,
+        class: "ml-2 btn alt"
+      ) %>
+</div>

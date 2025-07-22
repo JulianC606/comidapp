@@ -1,6 +1,9 @@
 es:
   activerecord:
     models:
+      delegation:
+        one: Delegación
+        other: Delegaciones
       lunch:
         one: Comida
         other: Comidas
@@ -17,6 +20,9 @@ es:
         one: Restricción Alimenticia
         other: Restricciones Alimenticias
     attributes:
+      delegation:
+        name: Nombre
+        participants_count: '# Participantes'
       participant:
         barcode: Código de barras
         name: Nombre
@@ -30,6 +36,9 @@ es:
         role/host: Host team
         role/academic_team: Equipo Académico
         role/observer: Observador
+        role/coach: Entrenador
+        role/team_manager: Responsable del equipo
+        role/ia: Juez independiente
         food_restriction_ids: Restricciones Alimenticias
       lunch:
         delivered_at: Fecha de entrega

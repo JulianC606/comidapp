@@ -1,0 +1,39 @@
+<% content_for :title, "Showing delegation" %>
+
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice">
+      <%= notice %>
+    </p>
+  <% end %>
+
+  <div class="flex justify-between items-center mb-6 gap-2 flex-wrap">
+    <h1 class="font-bold text-4xl text-primary-600 mb-2">
+      <%= @delegation.name.titleize %>
+    </h1>
+  </div>
+
+  <%= render @delegation %>
+
+  <div class="flex gap-2 my-6 justify-end flex-wrap">
+    <% if Current.user.admin? %>
+      <%= link_to(
+            t('helpers.anchors.edit', model: @delegation.model_name.human),
+            edit_participant_path(@delegation),
+            class: "btn alt"
+          ) %>
+      <%= link_to( 
+            t('helpers.anchors.back', model: @delegation.model_name.human(count: 2)),
+            delegations_path,
+            class: "btn alt"
+          ) %>
+    <% end %>
+  </div>
+
+  <div class="bg-white shadow-lg border border-gray-50 rounded-md p-6 flex flex-col justify-between overflow-x-auto">
+    <h2 class="font-bold text-2xl mb-4 text-primary-600">
+      <%= Participant.model_name.human(count: 2) %>
+    </h2>
+    <%= turbo_frame_tag :participants, lazy: true, src: participants_path(delegation_id: @delegation.id) %>
+  </div>
+</div>

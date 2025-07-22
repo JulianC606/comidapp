@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :delegations
   resources :users
   resources :lunches
   resources :participants, param: :barcode do

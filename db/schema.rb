@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_13_075549) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_17_023822) do
+  create_table "delegations", force: :cascade do |t|
+    t.string "name"
+    t.integer "participants_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "food_providers", force: :cascade do |t|
     t.string "name"
     t.boolean "default", default: false
@@ -58,6 +65,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_13_075549) do
     t.boolean "welcome_kit"
     t.string "role"
     t.integer "food_provider_id", null: false
+    t.integer "delegation_id"
+    t.index ["delegation_id"], name: "index_participants_on_delegation_id"
     t.index ["food_provider_id"], name: "index_participants_on_food_provider_id"
   end
 
@@ -86,6 +95,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_13_075549) do
   add_foreign_key "lunches", "food_providers"
   add_foreign_key "lunches", "participants"
   add_foreign_key "lunches", "users"
+  add_foreign_key "participants", "delegations"
   add_foreign_key "participants", "food_providers"
   add_foreign_key "sessions", "users"
 end

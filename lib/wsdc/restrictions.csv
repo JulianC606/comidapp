@@ -1,0 +1,16 @@
+name,kind
+Vegetarian,other
+Wheat-free,allergy
+Pescatarian,other
+Pork-free,allergy
+Shellfish-free,allergy
+Kosher,religious
+Fish-free,allergy
+Nut-free,allergy
+Halal,religious
+Lactose-free,allergy
+Egg-free,allergy
+Vegan,other
+Dairy-free,allergy
+No red meat,allergy
+Gluten-free,allergy

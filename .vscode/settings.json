@@ -1,5 +1,6 @@
 {
     "debug.javascript.defaultRuntimeExecutable": {
-        "pwa-node": "/home/julianc/snap/code/199/.local/share/mise/shims/node"
-    }
+        "pwa-node": "/home/julianc/snap/code/200/.local/share/mise/shims/node"
+    },
+    "editor.defaultFormatter": "Shopify.ruby-lsp"
 }

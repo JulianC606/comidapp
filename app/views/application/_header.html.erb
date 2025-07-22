@@ -16,6 +16,7 @@
             <%= render 'nav_link', content: t('helpers.titles.search', model: Participant.model_name.human), url: root_path %>
 
             <% if Current.user.admin? %>
+              <%= render 'nav_link', content: Delegation.model_name.human(count: 2), url: delegations_path %>
               <%= render 'nav_link', content: Lunch.model_name.human(count: 2), url: lunches_path %>
               <%= render 'nav_link', content: User.model_name.human(count: 2), url: users_path %>
               <%= render 'nav_link', content: FoodRestriction.model_name.human(count: 2), url: food_restrictions_path %>

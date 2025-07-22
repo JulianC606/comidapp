@@ -1,0 +1,450 @@
+name,country,role,food_restriction,allergies,barcode,barcode_encode
+Maggie Gamboa Alducin,,ia,,,001,Ì001ÈÎ
+Vladimira Šuflaj,Croatia,ia,,,002,Ì002 Î
+Ana Nari Carrillo,Panama,ia,,,003,Ì003#Î
+Dexx Han,,ia,,,004,Ì004&Î
+Emma van der Horst,Netherlands,ia,,,005,Ì005)Î
+Filip Gavranović,Slovenia,ia,,,006,"Ì006,Î"
+Genevieve Cox,USA,ia,,,007,Ì007/Î
+Gerson Oviedo Soto,Peru,ia,,,008,Ì0082Î
+Greta Pangonytė,Lithuania,ia,,,009,Ì0095Î
+Haotian Pan,Singapore,ia,,,010,Ì010ÇÎ
+Jeremiah Kenyanjui,Kenya,ia,,,011,Ì011ÊÎ
+Jesse Kitumba,,ia,,,012,"Ì012""Î"
+Julio Meyer,,ia,,,013,Ì013%Î
+Leandro Guevara,,ia,,,014,Ì014(Î
+Liana Schmitt-Emerson,,ia,,,015,Ì015+Î
+Lim En Hao,Singapore,ia,,,016,Ì016.Î
+Matt Mauriello,USA,ia,Vegetarian,,017,Ì0171Î
+Mauricio Jarufe Caballero,Peru,ia,,,018,Ì0184Î
+Michelle Adika,Kenya,ia,,,019,Ì0197Î
+Nicholas Aranda,USA,ia,,,020,Ì020ÉÎ
+Pranav Anand,,ia,,,021,Ì021!Î
+Rodrigo Trujillo,USA,ia,,,022,Ì022$Î
+Ruth Selorme Acolatse,Türkiye,academic_team,,,023,Ì023'Î
+Shalem Sumanthiran,Sri Lanka,ia,,,024,Ì024*Î
+Shayna Leng,Singapore,ia,,,025,Ì025-Î
+Šimon Pekar,Slovakia,ia,,,026,Ì0260Î
+Tarun Ruschmeier,Germany,ia,,,027,Ì0273Î
+Umar Fazlan,Malaysia,ia,,,028,Ì0286Î
+AINA SAITOVA,Russia,observer,Pescatarian,Wheat-free,029,Ì0299Î
+ALAN KHANNANOV,Russia,observer,,,030,Ì030 Î
+ALEKSANDR GOIKOLOV,Russia,observer,Pork-free,,031,Ì031#Î
+Beth Eades,England,team_manager,Vegetarian,,032,Ì032&Î
+Chantelle Mukabi,Kenya,adjudicator,,,033,Ì033)Î
+Dimpho Ntsoane,South Africa,observer,,,034,"Ì034,Î"
+Haesol Park,China,observer,,,035,Ì035/Î
+Hannah Zimeng Liu,Canada,observer,,,036,Ì0362Î
+Jade Yixuan Wang,Canada,observer,,,037,Ì0375Î
+James Weaver,USA,observer,,Shellfish-free,038,Ì0388Î
+Jieying Shen,China,observer,,,039,Ì039;Î
+Kaelyn Yu,China,observer,,,040,"Ì040""Î"
+Lina Wu,China,observer,,,041,Ì041%Î
+Ljiljana Kojić,Austria,observer,,,042,Ì042(Î
+Methembe Michael Mthimkhulu,Zimbabwe,team_manager,Kosher,,043,Ì043+Î
+Miaotong Shen,China,observer,,,044,Ì044.Î
+Miaozhe Shen,China,observer,,,045,Ì0451Î
+Michelle Chau Anh Loreman,Vietnam,observer,,,046,Ì0464Î
+Nguyen My Lan,Vietnam,observer,,,047,Ì0477Î
+Omer Bareket,Israel,adjudicator,,,048,Ì048:Î
+Randolph Yu,China,observer,,,049,Ì049=Î
+Santiago Domenech Revilla,Mexico,observer,,,050,Ì050$Î
+Scott James Ralston,Scotland,ia,,,051,Ì051'Î
+Scott Ralston,Scotland,ia,,,052,Ì052*Î
+Scott Wunn,USA,team_manager,,,053,Ì053-Î
+SERAFIM NOVOSELOV,Russia,observer,,,054,Ì0540Î
+Sofya Stepanova,Russia,observer,,,055,Ì0553Î
+Sofyan Haider Sultan,Pakistan,observer,,,056,Ì0566Î
+Sze Long Cheung,Hong Kong,observer,,,057,Ì0579Î
+Tingting Zhong,China,observer,,,058,Ì058<Î
+Yu Xuan Liu,Canada,observer,,,059,Ì059?Î
+Yuechi Li,Canada,observer,,,060,Ì060&Î
+Zili Liu,China,observer,,,061,Ì061)Î
+Francisco Sánchez,Argentina,team_manager,Vegetarian,,062,"Ì062,Î"
+Ezequiel Moliterno,Argentina,coach,,,063,Ì063/Î
+Álvaro De Pedro Lopópolo,Argentina,speaker,,,064,Ì0642Î
+Sol Gryner,Argentina,speaker,,,065,Ì0655Î
+Sofía Strazzolini,Argentina,speaker,Fish-free,,066,Ì0668Î
+Lucía Praino,Argentina,speaker,Vegetarian,,067,Ì067;Î
+Gonzalo Ponce de León,Argentina,speaker,,,068,Ì068>Î
+Fernando Rivas de Quesada,Argentina,adjudicator,,,069,Ì069AÎ
+Bishal Podder,Armenia,team_manager,,,070,Ì070(Î
+Sum Yuet (Bobo) Wong,Armenia,coach,,,071,Ì071+Î
+Anam McCartney,Armenia,speaker,,,072,Ì072.Î
+Patryk Stelmaszek,Armenia,speaker,,,073,Ì0731Î
+Banu Ilinca-Maria,Armenia,speaker,,,074,Ì0744Î
+Anastasiia Sukhonosova,Armenia,speaker,,,075,Ì0757Î
+Phạm Trần Bảo Châu,Armenia,speaker,,,076,Ì076:Î
+Emily Zhang,Armenia,adjudicator,,,077,Ì077=Î
+Max Thomas,Australia,team_manager,,,078,Ì078@Î
+Thomas Nunn-Rutledge,Australia,coach,,,079,Ì079CÎ
+Olivia Lucy Harvey Whyte,Australia,coach,Pescatarian,,080,Ì080*Î
+Harry Tong,Australia,speaker,,,081,Ì081-Î
+Alice Steinberg Liberman,Australia,speaker,Pork-free,,082,Ì0820Î
+Maya Garg,Australia,speaker,,Nut-free,083,Ì0833Î
+Victoria Christine Hill,Australia,speaker,,,084,Ì0846Î
+Lucas Lu,Australia,speaker,,,085,Ì0859Î
+Anna Neuber,Austria,team_manager,,,086,Ì086<Î
+Marina Kojić,Austria,coach,,,087,Ì087?Î
+Elisa Cerda,Austria,speaker,,,088,Ì088BÎ
+Elena Brehm,Austria,speaker,,,089,Ì089EÎ
+Sofia Schuppler,Austria,speaker,,,090,"Ì090,Î"
+Viktor Vojnoski,Austria,speaker,,,091,Ì091/Î
+Mihail Zahariev,Austria,speaker,Fish-free,,092,Ì0922Î
+Samuel Gall,Austria,adjudicator,,,093,Ì0935Î
+Tabassum Khan Prithi,Bangladesh,team_manager,Halal,,094,Ì0948Î
+Placeholder TBC,Bangladesh,coach,,,095,Ì095;Î
+Syed Samirul Islam Khan,Bangladesh,speaker,Halal,,096,Ì096>Î
+Kazi Zuairia Binte Habib,Bangladesh,speaker,"Halal,Fish-free",,097,Ì097AÎ
+Ahnaf Tahmid Saiyanta,Bangladesh,speaker,Halal,Shellfish-free,098,Ì098DÎ
+Tauhid Islam Jami,Bangladesh,speaker,Halal,,099,Ì099GÎ
+Mahpara Faatin,Bangladesh,speaker,Halal,,100,Ì100ÆÎ
+Jess Peixoto,Brazil,team_manager,,,101,Ì101ÉÎ
+Samuel Knijnik Werneck,Brazil,coach,,,102,Ì102!Î
+Vitor de Oliveira Cezário,Brazil,speaker,,,103,Ì103$Î
+Luiz Carlos Wurster Arns de Oliveira,Brazil,speaker,,,104,Ì104'Î
+Arthur Rodrigues Gutierrez,Brazil,speaker,,,105,Ì105*Î
+Luiza de Bastiani Ribeiro,Brazil,speaker,,,106,Ì106-Î
+Antonio Tibúrcio de Luna Neto,Brazil,speaker,,,107,Ì1070Î
+Rosen Razpopov,Bulgaria,team_manager,Fish-free,Nut-free,108,Ì1083Î
+Alek Selveliev,Bulgaria,coach,,,109,Ì1096Î
+Adelina Georgieva Galabinova,Bulgaria,speaker,,,110,Ì110ÈÎ
+Kaloyan Krassimirov Kotzev,Bulgaria,speaker,,,111,Ì111 Î
+Valentin Tzvetanov Katzarov,Bulgaria,speaker,,,112,Ì112#Î
+Marin Marinov Marinov,Bulgaria,speaker,,,113,Ì113&Î
+Leora Diakuw,Canada,team_manager,Vegetarian,,114,Ì114)Î
+Brent Schmidt,Canada,coach,,,115,"Ì115,Î"
+Arsalan Ghaemi,Canada,coach,,,116,Ì116/Î
+Jinjou Wang,Canada,speaker,,,117,Ì1172Î
+Ann Wang,Canada,speaker,,,118,Ì1185Î
+Lucas Le,Canada,speaker,,Nut-free,119,Ì1198Î
+Sarah Erlhan Li,Canada,speaker,,,120,Ì120ÊÎ
+Xikai Fan,Canada,speaker,,,121,"Ì121""Î"
+Jason Hong,Canada,adjudicator,,,122,Ì122%Î
+Ana María Tomassini,Chile,team_manager,,,123,Ì123(Î
+Florencia Atria Fuentes,Chile,coach,,,124,Ì124+Î
+Vicente Alejandro Olguin Tripailaf,Chile,speaker,Fish-free,Shellfish-free,125,Ì125.Î
+Mia Powditch Gálmez,Chile,speaker,,,126,Ì1261Î
+Rita Edwards Salas,Chile,speaker,,,127,Ì1274Î
+Sihan Emma Bian,Chile,speaker,,,128,Ì1287Î
+Julieta Cardenas Grraff,Chile,speaker,,,129,Ì129:Î
+David Peterson,China,team_manager,,,130,Ì130!Î
+Edward Feilong Xu,China,coach,,,131,Ì131$Î
+Zimo Liao,China,speaker,Pork-free,,132,Ì132'Î
+Zhi Liu,China,speaker,,,133,Ì133*Î
+Sophia Xie Gong,China,speaker,,,134,Ì134-Î
+Leah Lee Del Fierro,China,speaker,,,135,Ì1350Î
+Javier Leng Jae Shaen,China,speaker,,,136,Ì1363Î
+Xiaowei Hao,China,adjudicator,,,137,Ì1376Î
+Loren Serdarević,Croatia,team_manager,Pork-free,Nut-free,138,Ì1389Î
+Nika Ćavar,Croatia,coach,,,139,Ì139<Î
+Domagoj Praljak,Croatia,speaker,,,140,Ì140#Î
+Marin Bolanča,Croatia,speaker,,,141,Ì141&Î
+Mila Krešić,Croatia,speaker,Vegetarian,,142,Ì142)Î
+Nela Damić,Croatia,speaker,,,143,"Ì143,Î"
+Lana Srića,Croatia,speaker,,,144,Ì144/Î
+Jakub Hlaváček,Czechia,team_manager,,,145,Ì1452Î
+Nicolas Ivanov,Czechia,coach,Vegetarian,,146,Ì1465Î
+Barbora Votlučková,Czechia,coach,,,147,Ì1478Î
+Jan Jaroslav Pozdník,Czechia,speaker,,,148,Ì148;Î
+Kryštof Olša,Czechia,speaker,,,149,Ì149>Î
+Kristián Čech,Czechia,speaker,,,150,Ì150%Î
+Petr Kosička,Czechia,speaker,,,151,Ì151(Î
+Jan Hlaváček,Czechia,adjudicator,,,152,Ì152+Î
+Adam Černička,Czechia,adjudicator,,,153,Ì153.Î
+Filip Vrťo,Czechia,adjudicator,,,154,Ì1541Î
+Geneva Roy,Denmark,team_manager,,,155,Ì1554Î
+Maria Bahar Alamgiralam,Denmark,speaker,Lactose-free,,156,Ì1567Î
+Haniya Eman Khaibar Yusuf,Denmark,speaker,"Halal,Lactose-free",,157,Ì157:Î
+Marcus Carl Christofer Johansson,Denmark,speaker,Lactose-free,,158,Ì158=Î
+Samuel Terkel Studsgarth,Denmark,speaker,,,159,Ì159@Î
+Peter Nyvold Bojsen-Møller,Denmark,speaker,,,160,Ì160'Î
+Joshua Varughese,Denmark,adjudicator,,,161,Ì161*Î
+Guilherme Pereira,Ecuador,team_manager,,,162,Ì162-Î
+Iann David Tobar Higuera,Ecuador,speaker,,,163,Ì1630Î
+Alejandra Susana León Tito,Ecuador,speaker,,"Nut-free,Shellfish-free",164,Ì1643Î
+Juliana Kamille Pazos Huilcapi,Ecuador,speaker,,,165,Ì1656Î
+Carlos Cristobal Ubidia Noboa,Ecuador,speaker,,,166,Ì1669Î
+Matt Hazell,England,coach,,,167,Ì167<Î
+Pui Yan Valerie Choi,England,speaker,,,168,Ì168?Î
+Joshua Maita Muzumbe,England,speaker,,,169,Ì169BÎ
+Aryaman Sarda,England,speaker,Vegetarian,,170,Ì170)Î
+Adrian Orlando Siniscalco,England,speaker,,,171,"Ì171,Î"
+Taeyoon Song,England,speaker,,,172,Ì172/Î
+Maxine Muirhead,Scotland,adjudicator,,,173,Ì1732Î
+Filip Pavšek,Slovenia,adjudicator,,,174,Ì1745Î
+Lauren Burdt,USA,adjudicator,,,175,Ì1758Î
+Gabriel Lewis,USA,adjudicator,,,176,Ì176;Î
+Martin Küüsmaa,Estonia,team_manager,Fish-free,,177,Ì177>Î
+Markus Laanoja,Estonia,coach,,,178,Ì178AÎ
+Richard Käsper,Estonia,speaker,,,179,Ì179DÎ
+Anni Sooman,Estonia,speaker,,,180,Ì180+Î
+Lola Tiina Särekanno,Estonia,speaker,,,181,Ì181.Î
+Kaspar Noor,Estonia,speaker,,,182,Ì1821Î
+Andreas Simson,Estonia,speaker,,,183,Ì1834Î
+Tommi Valgma,Estonia,adjudicator,,,184,Ì1847Î
+Samuel Scheuer,Germany,team_manager,,,185,Ì185:Î
+Gabriel Lin,Germany,coach,,,186,Ì186=Î
+Felix Simon Georgij Polianski,Germany,speaker,,,187,Ì187@Î
+Yuye Qian,Germany,speaker,,,188,Ì188CÎ
+Alexandra Rubinstein,Germany,speaker,,,189,Ì189FÎ
+Horváth Zaránd,Germany,speaker,,,190,Ì190-Î
+Kiara Katharina Schembs,Germany,speaker,,,191,Ì1910Î
+Alexia Sextou,Greece,team_manager,Pescatarian,,192,Ì1923Î
+Michael Shapira,Greece,coach,,,193,Ì1936Î
+Kallina Basli,Greece,coach,,,194,Ì1949Î
+Artemis Papastavrou,Greece,speaker,,,195,Ì195<Î
+Elli Kitinou,Greece,speaker,,,196,Ì196?Î
+Kai Yuet Zhang,Greece,speaker,,,197,Ì197BÎ
+Marianna Argeiti,Greece,speaker,,,198,Ì198EÎ
+Juan Pablo Cordón Cotero,Guatemala,team_manager,,,199,Ì199HÎ
+Maria Camila Castillo Motta,Guatemala,coach,,,200,Ì200ÇÎ
+Mariana Areano Alvarado,Guatemala,speaker,Vegetarian,,201,Ì201ÊÎ
+Fatima Sofía Gomez Morales,Guatemala,speaker,Pork-free,,202,"Ì202""Î"
+Ana Sofía Velásquez Peters,Guatemala,speaker,,Shellfish-free,203,Ì203%Î
+Pablo Alberto Lavagnino Sánchez,Guatemala,speaker,,,204,Ì204(Î
+Jose Roberto Cossich Galicia,Guatemala,speaker,,,205,Ì205+Î
+Harish Natarajan,Hong Kong,team_manager,Vegetarian,,206,Ì206.Î
+Loke Wingfatt,Hong Kong,coach,,,207,Ì2071Î
+Advik Sharma,Hong Kong,speaker,,Egg-free,208,Ì2084Î
+Mollie Yufan Mei,Hong Kong,speaker,,,209,Ì2097Î
+Jeanine Cheng,Hong Kong,speaker,,,210,Ì210ÉÎ
+Juhyun Nam,Hong Kong,speaker,,,211,Ì211!Î
+Lauren Tian Yan Tse,Hong Kong,speaker,,,212,Ì212$Î
+Urfaan Sadid,Hong Kong,adjudicator,Halal,,213,Ì213'Î
+Lucie Slamova,Hungary,team_manager,Vegan,,214,Ì214*Î
+Amitai Ben Porat,Hungary,coach,,,215,Ì215-Î
+Ralf Yildrim,Hungary,speaker,,,216,Ì2160Î
+Flora Zsoldos,Hungary,speaker,,,217,Ì2173Î
+Szofi Makrai,Hungary,speaker,Vegetarian,,218,Ì2186Î
+Annamaria Wirtz,Hungary,speaker,,,219,Ì2199Î
+Hanna Janoskuti,Hungary,speaker,,,220,Ì220 Î
+Namita Pandey,India,team_manager,Pescatarian,Dairy-free,221,Ì221#Î
+Christos Mentis Cravaris,India,coach,,,222,Ì222&Î
+Atul Rajeev Hiremath,India,coach,,Shellfish-free,223,Ì223)Î
+Avni Kaur Chadha,India,speaker,"No red meat,Pork-free",,224,"Ì224,Î"
+Uday Vir Khosla,India,speaker,,,225,Ì225/Î
+Veda Kalra,India,speaker,No red meat,,226,Ì2262Î
+Manveer Pratap Rathore,India,speaker,No red meat,,227,Ì2275Î
+Arnav Agarwal,India,speaker,Vegetarian,Egg-free,228,Ì2288Î
+Parth Bansal,India,adjudicator,No red meat,,229,Ì229;Î
+Muhammad Batara Mulya,Indonesia,team_manager,Halal,,230,"Ì230""Î"
+Omar Azfar Haqqani,Indonesia,coach,,,231,Ì231%Î
+Raymond Arvin,Indonesia,speaker,No red meat,,232,Ì232(Î
+Audrey Effendi,Indonesia,speaker,,,233,Ì233+Î
+Chelsea Cecillia Cang,Indonesia,speaker,No red meat,,234,Ì234.Î
+Anzea Wirasasmita,Indonesia,speaker,,,235,Ì2351Î
+Jack Palmer,Ireland,team_manager,,,236,Ì2364Î
+Adrianne Ward,Ireland,coach,,,237,Ì2377Î
+Juliet Jane McVerry,Ireland,speaker,,,238,Ì238:Î
+Finley O'Dea,Ireland,speaker,Vegetarian,,239,Ì239=Î
+Sean Paul McSweeney,Ireland,speaker,,,240,Ì240$Î
+Sophie Grace Bell,Ireland,speaker,Vegetarian,,241,Ì241'Î
+Lousie Deirdre Purcell,Ireland,speaker,,,242,Ì242*Î
+Roibeard Fitzpatrick,Ireland,adjudicator,,,243,Ì243-Î
+Avital Stahl,Israel,team_manager,"Vegetarian,Pescatarian",Shellfish-free,244,Ì2440Î
+Yuval Gonen,Israel,speaker,,,245,Ì2453Î
+Uri Syrkin,Israel,speaker,"No red meat,Pork-free",,246,Ì2466Î
+Noya Gellis,Israel,speaker,Vegetarian,,247,Ì2479Î
+Raphael Troen,Israel,speaker,Vegetarian,,248,Ì248<Î
+Ido Shaked,Israel,speaker,,,249,Ì249?Î
+Sara Monguzzi,Italy,adjudicator,,,250,Ì250&Î
+Gianluca Presutti,Italy,team_manager,Gluten-free,Wheat-free,251,Ì251)Î
+Gabriele Amenta,Italy,coach,,,252,"Ì252,Î"
+Tea Omodeo Zorini,Italy,speaker,Vegetarian,,253,Ì253/Î
+Giada Gambino,Italy,speaker,,,254,Ì2542Î
+Beatrice Formenton,Italy,speaker,,,255,Ì2555Î
+Tommaso Cimiotta,Italy,speaker,,,256,Ì2568Î
+Luca Ditoma,Italy,speaker,,,257,Ì257;Î
+Hiroyuki Maruhashi,Japan,team_manager,,,258,Ì258>Î
+Amane Kawano,Japan,coach,,,259,Ì259AÎ
+Sunghyun Park,Japan,coach,,,260,Ì260(Î
+Seiji Kanegae,Japan,speaker,Vegetarian,,261,Ì261+Î
+Natsuki Mogi,Japan,speaker,,,262,Ì262.Î
+Hiroko Sugano,Japan,speaker,Fish-free,,263,Ì2631Î
+Kantaro Ishida,Japan,speaker,,,264,Ì2644Î
+Haruka Futai,Japan,speaker,,,265,Ì2657Î
+Miru Kawamata,Japan,adjudicator,,,266,Ì266:Î
+Minami Matsushima,Japan,adjudicator,,,267,Ì267=Î
+Sara Michelle Bachouros,Japan,adjudicator,,,268,Ì268@Î
+Njuguna Macharia,Kenya,team_manager,,,269,Ì269CÎ
+Kwame Karuki Kimani,Kenya,speaker,,,270,Ì270*Î
+Adrian Waweru Kinyanjul,Kenya,speaker,,,271,Ì271-Î
+Berachah Atsieno Okumu,Kenya,speaker,,,272,Ì2720Î
+Justin Joowon Suh,South Korea,team_manager,,,273,Ì2733Î
+Rokas Atkociunas,Lithuania,team_manager,,,274,Ì2746Î
+Liudas Vinkleris,Lithuania,coach,,,275,Ì2759Î
+Kristijonas Ridzevičius,Lithuania,speaker,Vegetarian,,276,Ì276<Î
+Martyna Vaitkutė,Lithuania,speaker,Vegetarian,,277,Ì277?Î
+Milda Sofija Leonavičiūtė,Lithuania,speaker,,,278,Ì278BÎ
+Jogaila Mitkus,Lithuania,speaker,,,279,Ì279EÎ
+Dominykas Smaliukas,Lithuania,speaker,,,280,"Ì280,Î"
+Mai Mokhsein,Malaysia,team_manager,,,281,Ì281/Î
+Evan Wei Ren Tan,Malaysia,coach,,,282,Ì2822Î
+Bernice Tan Jia Xin,Malaysia,speaker,,,283,Ì2835Î
+Andrea Ong Li Wei,Malaysia,speaker,Fish-free,Shellfish-free,284,Ì2848Î
+Wayne Ooi Jia Jie,Malaysia,speaker,,Shellfish-free,285,Ì285;Î
+Daphne Ngu Dai Ning,Malaysia,speaker,,,286,Ì286>Î
+Megan Ong Xin Yi,Malaysia,speaker,,,287,Ì287AÎ
+Isolda Vela,Mexico,team_manager,Pescatarian,,288,Ì288DÎ
+Manuel Machorro,Mexico,coach,,,289,Ì289GÎ
+Isabel Padrón Piñeiro,Mexico,speaker,,,290,Ì290.Î
+Manuela Jaramillo Castro,Mexico,speaker,,,291,Ì2911Î
+Brendon Doyoon Ahn,Mexico,speaker,,,292,Ì2924Î
+Jose Luis Ortega Castro,Mexico,speaker,,,293,Ì2937Î
+Natalia Torres Miana,Mexico,speaker,,,294,Ì294:Î
+Laura van Helmond,Netherlands,team_manager,,Nut-free,295,Ì295=Î
+Maya Saveliev,Netherlands,coach,,,296,Ì296@Î
+Peter Roelof Groen,Netherlands,speaker,,,297,Ì297CÎ
+Ebbie Gail Bückmann,Netherlands,speaker,,,298,Ì298FÎ
+Pui Hei Chan,Netherlands,speaker,,,299,Ì299IÎ
+Noam Daniel Leskes,Netherlands,speaker,,,300,Ì300ÈÎ
+Annabel Margaret Smith,Netherlands,speaker,Gluten-free,Wheat-free,301,Ì301 Î
+Melissa Connolly,New Zealand,team_manager,,,302,Ì302#Î
+Samuel Walter Allan (Sam),New Zealand,speaker,,,303,Ì303&Î
+Sebastian James Heine-Sheldrake,New Zealand,speaker,,,304,Ì304)Î
+Isabella Rosa McKeffry,New Zealand,speaker,,,305,"Ì305,Î"
+Bruce Xuan Zhang,New Zealand,speaker,,,306,Ì306/Î
+Alan Yining Chen,New Zealand,speaker,,,307,Ì3072Î
+Janet Guo,New Zealand,adjudicator,,Nut-free,308,Ì3085Î
+Andrew Chen,,academic_team,,,309,Ì3098Î
+Jason Xiao,,academic_team,,,310,Ì310ÊÎ
+Chan Sol Park,,academic_team,,,311,"Ì311""Î"
+Theodore Dounias,,academic_team,,,312,Ì312%Î
+Reja Debevc,,academic_team,,,313,Ì313(Î
+Mukudzeiishe Madzivire,,academic_team,,,314,Ì314+Î
+Tamkeen Nawab,,academic_team,,,315,Ì315.Î
+Étienne Beaulé,,academic_team,,,316,Ì3161Î
+Valeria Corona,,academic_team,Vegan,,317,Ì3174Î
+Varshini Venkatesh,,academic_team,Vegetarian,Egg-free,318,Ì3187Î
+Alelí Chaparro,,academic_team,,,319,Ì319:Î
+Daniela Noriega García,Panama,staff,,,320,Ì320!Î
+Alejandro Espino,Panama,staff,,,321,Ì321$Î
+Lorena Abad,Panama,staff,,,322,Ì322'Î
+Sherly Sánchez,Panama,staff,,,323,Ì323*Î
+Manuel Moreno,Panama,staff,,,324,Ì324-Î
+Adrián García,Panama,staff,,,325,Ì3250Î
+Isabel Flores,Panama,staff,,,326,Ì3263Î
+Ángel Arcilla,Panama,staff,,,327,Ì3276Î
+Julián Cipagauta,Panama,staff,,,328,Ì3289Î
+Nazareth Pineda,Panama,staff,,,329,Ì329<Î
+Diego Dominguez,Panama,staff,,,330,Ì330#Î
+Isaac Sidoriak,Panama,staff,,,331,Ì331&Î
+Jaasiel Dale,Panama,staff,,,332,Ì332)Î
+Hilda Santizo,Panama,staff,,,333,"Ì333,Î"
+Rebecca Bernal,Panama,staff,,,334,Ì334/Î
+Ken Hodai,Panama,staff,,,335,Ì3352Î
+Natalia Fernandez,Panama,staff,,,336,Ì3365Î
+Laura Lasso de La Vega,Panama,staff,,,337,Ì3378Î
+Erich Montilla,Panama,staff,,,338,Ì338;Î
+Nathalie Urrutia,Panama,staff,,,339,Ì339>Î
+Venus García,Panama,staff,,,340,Ì340%Î
+Emmanuel Dominguez,Panama,staff,,,341,Ì341(Î
+Adriana De La Barrera,Panama,staff,,,342,Ì342+Î
+Juan Pablo Carbonell,Panama,staff,,,343,Ì343.Î
+Alan Smith,Panama,staff,,,344,Ì3441Î
+Angie Montenegro,Panama,staff,,,345,Ì3454Î
+Daniela Hidalgo,Panama,staff,,,346,Ì3467Î
+Sofia Ballesteros,Panama,staff,,,347,Ì347:Î
+Muhammad Hamza Farookhi,Pakistan,team_manager,Halal,,348,Ì348=Î
+Muhammad Mahad Akbar,Pakistan,coach,,,349,Ì349@Î
+Syed Sarosh Hasan,Pakistan,coach,,,350,Ì350'Î
+Rida Asim,Pakistan,speaker,Halal,,351,Ì351*Î
+Muhammad Daniyal Hassan,Pakistan,speaker,Halal,,352,Ì352-Î
+Eeshal Rehman,Pakistan,speaker,Halal,,353,Ì3530Î
+Asma Mandviwala,Pakistan,speaker,Halal,,354,Ì3543Î
+Ali Nasir,Pakistan,speaker,Halal,,355,Ì3556Î
+Anum Naseer,Pakistan,adjudicator,,,356,Ì3569Î
+Simon Luo,Panama,team_manager,Fish-free,,357,Ì357<Î
+Fabián Ariel Yaksic Muñoz,Panama,coach,,,358,Ì358?Î
+Isabella Blanchard Cahill Rangel,Panama,speaker,,,359,Ì359BÎ
+Chih Yen Chuang,Panama,speaker,,,360,Ì360)Î
+Augusto Joel Pino Aparicio,Panama,speaker,,,361,"Ì361,Î"
+Miguel Angel Morales Barragán,Panama,speaker,,,362,Ì362/Î
+Julio Aizprúa Morales,Panama,speaker,,,363,Ì3632Î
+Isabella Denisse Cuervo Guevara,Panama,adjudicator,"Gluten-free,Lactose-free",Dairy-free,364,Ì3645Î
+Ana Patricia Carrillo Perez,Panama,adjudicator,,,365,Ì3658Î
+Marcelo Beramendi,Peru,team_manager,,,366,Ì366;Î
+Fernanda Crousillat Rayter,Peru,coach,Vegetarian,,367,Ì367>Î
+Valentina Galdos Acha,Peru,speaker,,,368,Ì368AÎ
+Ainara Rosales Saavedra,Peru,speaker,,,369,Ì369DÎ
+Fiorella Avila Doroteo,Peru,speaker,,,370,Ì370+Î
+Luciana Carlo Mallqui,Peru,speaker,,,371,Ì371.Î
+Fatima Loriana Sedano Panizo,Peru,speaker,,,372,Ì3721Î
+Ana Elisa Prado Rocha,Peru,adjudicator,,,373,Ì3734Î
+Gabriel Guia,Portugal,team_manager,Lactose-free,,374,Ì3747Î
+Caio Santos Rodrigues Teixeira,Portugal,speaker,,,375,Ì375:Î
+Eduardo Favalessa Sirgado,Portugal,speaker,,,376,Ì376=Î
+Manuela Favalessa Sirgado,Portugal,speaker,Vegetarian,,377,Ì377@Î
+Beatriz de Sousa Amorim,Portugal,speaker,,,378,Ì378CÎ
+Mariana Reis Martins Santos Ricardo,Portugal,speaker,,,379,Ì379FÎ
+Livia Mariano Fordellone,Portugal,adjudicator,,,380,Ì380-Î
+Amanda Chan,Qatar,team_manager,Vegan,,381,Ì3810Î
+Sajid Asbat Khandaker,Qatar,coach,Halal,,382,Ì3823Î
+Khalid Ibrahim,Qatar,coach,Halal,,383,Ì3836Î
+Aisha Alasmakh,Qatar,speaker,Halal,,384,Ì3849Î
+Ameera Al-Ishaq,Qatar,speaker,Halal,,385,Ì385<Î
+Alanoud Alkaabi,Qatar,speaker,Halal,,386,Ì386?Î
+Aisha Al Dosari,Qatar,speaker,Halal,,387,Ì387BÎ
+Joude Ziani,Qatar,speaker,Halal,,388,Ì388EÎ
+Fatima Marafi,Qatar,adjudicator,Halal,,389,Ì389HÎ
+Mira Khalid Hussain,Qatar,adjudicator,Halal,,390,Ì390/Î
+Mubarrat Wassey,Qatar,adjudicator,Vegan,,391,Ì3912Î
+Laura Dragoi,Romania,team_manager,,,392,Ì3925Î
+Beatrice Paun,Romania,coach,,,393,Ì3938Î
+Dragos Cristian Matei,Romania,speaker,,,394,Ì394;Î
+David Antoniu Bagacian,Romania,speaker,,,395,Ì395>Î
+Daria Elena Iancu,Romania,speaker,,,396,Ì396AÎ
+Ionut Andrei Moldovan,Romania,speaker,,,397,Ì397DÎ
+Sorin Ticlete,Romania,speaker,,,398,Ì398GÎ
+Simona Mazilu,Romania,adjudicator,,,399,Ì399JÎ
+Elena Zarudnyaya,Russia,team_manager,,,400,Ì400ÉÎ
+MICHAEL-AQUILA GAO,Russia,speaker,,,401,Ì401!Î
+SOFIA EFREMOVA,Russia,speaker,,,402,Ì402$Î
+EMIL KHANNANOV,Russia,speaker,,,403,Ì403'Î
+MARK SERKIN,Russia,speaker,Kosher,,404,Ì404*Î
+MICHAiL KRAVCHENKO,Russia,speaker,,,405,Ì405-Î
+Tom Milling,Scotland,team_manager,Vegetarian,,406,Ì4060Î
+Emma Bell,Scotland,coach,Vegetarian,,407,Ì4073Î
+Freddy Simmonet-Lefevre,Scotland,coach,,,408,Ì4086Î
+Ruben Vandor Miller,Scotland,speaker,,,409,Ì4099Î
+Lucy Edwards,Scotland,speaker,Vegetarian,,410,Ì410 Î
+Hiu Ki Zoe Yim,Scotland,speaker,,,411,Ì411#Î
+Lionel Lye,Singapore,team_manager,,,412,Ì412&Î
+Geetha Creffield,Singapore,coach,,,413,Ì413)Î
+Saanvi Sinha,Singapore,speaker,,,414,"Ì414,Î"
+Amelia Tay Juey Oon,Singapore,speaker,,Shellfish-free,415,Ì415/Î
+Huo Xi Cheng,Singapore,speaker,,,416,Ì4162Î
+Adam Kalivoda,Slovakia,team_manager,,,417,Ì4175Î
+Stanislav Jozef Krištofík,Slovakia,coach,,,418,Ì4188Î
+Bojana Skrt,Slovenia,team_manager,,,419,Ì419;Î
+Rok Hafner,Slovenia,coach,,,420,"Ì420""Î"
+Ropafadzo Zharare,South Africa,team_manager,,,421,Ì421%Î
+Itumeleng Mohanoe,South Africa,coach,,,422,Ì422(Î
+Andile Kubheka,South Africa,adjudicator,,,423,Ì423+Î
+Bill Hyunwoo Cho,South Korea,speaker,,,424,Ì424.Î
+Brooke Lai,South Korea,speaker,,,425,Ì4251Î
+Connie Yewon Han,South Korea,speaker,,,426,Ì4264Î
+Jian Hong,South Korea,speaker,,,427,Ì4277Î
+Elliot Dowon Suh,South Korea,speaker,,,428,Ì428:Î
+Ana Rodriguez del Pozo,Spain,team_manager,,,429,Ì429=Î
+Devin Hewage,Sri Lanka,team_manager,,,430,Ì430$Î
+Korelege Sachin Tissera,Sri Lanka,coach,,Shellfish-free,431,Ì431'Î
+Jessica Coletta Fenger,Switzerland,team_manager,,Nut-free,432,Ì432*Î
+Jessica Oh (Jee Seung Oh),Taiwan,team_manager,,,433,Ì433-Î
+Yeonwoo Sim,Taiwan,coach,,,434,Ì4340Î
+Anthony Kinawari,Tanzania,team_manager,,,435,Ì4353Î
+Rosemary Sagome Matabane,Tanzania,coach,,,436,Ì4366Î
+Dominic Yebula Mwakifulefule,Tanzania,coach,,,437,Ì4379Î
+Anı Deniz Gunduz,Türkiye,team_manager,,,438,Ì438<Î
+Zeynep Naz Türkmen,Türkiye,coach,,,439,Ì439?Î
+Mrs. Bhavani Vicky Kriplani,United Arab Emirates,team_manager,"Vegetarian,Pescatarian",,440,Ì440&Î
+Ahmad Tousif Jami,United Arab Emirates,coach,Halal,,441,Ì441)Î
+Christopher Vincent,USA,coach,,,442,"Ì442,Î"
+Phan Mỹ Linh,Vietnam,team_manager,,,443,Ì443/Î
+Rushdoon Ahmed,Vietnam,coach,Halal,,444,Ì4442Î
+Maison Maphosa,Zimbabwe,coach,,,445,Ì4455Î
+Christian Nokutenda Nhika,Zimbabwe,speaker,,,446,Ì4468Î
+Dean Tawananyasha Femayi,Zimbabwe,speaker,,,447,Ì447;Î
+Mbonisi Khuphukani Nkala,Zimbabwe,speaker,,,448,Ì448>Î
+Chuhan Cheng,Zimbabwe,speaker,,,449,Ì449AÎ

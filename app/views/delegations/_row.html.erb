@@ -1,0 +1,9 @@
+<tr id="<%= dom_id delegation %>" class="*:p-3 *:border-b">
+  <td><%= delegation.id %></td>
+  <td><%= delegation.name.titleize %></td>
+  <td><%= delegation.participants_count %></td>
+  <td class="w-fit">
+    <%= link_to t('show'), delegation, class: 'btn sm alt mb-1', data: { turbo_frame: '_top'} %>
+    <%= link_to t('edit'), edit_delegation_path(delegation), class: 'btn sm alt', data: { turbo_frame: '_top'} %>
+  </td>
+</tr>

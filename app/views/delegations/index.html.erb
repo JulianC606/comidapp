@@ -1,0 +1,37 @@
+<% content_for :title, @delegations.model_name.human(count: 2) %>
+
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-6 text-green-500 font-medium rounded-md inline-block" id="notice">
+      <%= notice %>
+    </p>
+  <% end %>
+
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="font-bold text-4xl text-primary-600"><%= @delegations.model_name.human(count: 2) %></h1>
+    <%= link_to(
+          t('helpers.anchors.new', model: @delegations.model_name.human),
+          new_delegation_path,
+          class: "btn"
+        ) %>
+  </div>
+
+  <%= turbo_frame_tag :delegations, class: 'block overflow-x-auto w-full' do %>
+    <table class="border-collapse table-auto w-full">
+      <thead class="text-title sticky top-0 bg-primary-100 ">
+        <tr class="*:font-medium *:text-sm *:p-3 *:text-left *:text-primary-600">
+          <th class="rounded-l-md"><%= @delegations.human_attribute_name('id') %></th>
+          <th><%= @delegations.human_attribute_name('name') %></th>
+          <th><%= @delegations.human_attribute_name('participants_counter') %></th>
+          <th class="rounded-r-md"><%= t('actions') %></th>
+        </tr>
+      </thead>
+      <tbody class="text-sm" id='lunches'>
+        <% @delegations.each do |delegation| %>
+          <%= render 'row', delegation: %>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @delegations %>
+  <% end %>
+</div>

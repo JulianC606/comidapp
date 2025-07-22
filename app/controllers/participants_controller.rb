@@ -1,10 +1,9 @@
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: %i[ show edit update destroy ]
+  before_action :set_participants, only: %i[ index ]
 
   # GET /participants or /participants.json
-  def index
-    @participants = Participant.includes(:food_provider).page(params[:page] || 1)
-  end
+  def index; end
 
   # GET /participants/1 or /participants/1.json
   def show
@@ -48,6 +47,13 @@ class ParticipantsController < ApplicationController
   end
 
   private
+
+    def set_participants
+      @participants = Participant.includes(:food_provider, :delegation)
+      @participants = @participants.where(delegation_id: params[:delegation_id]) if params[:delegation_id].present?
+      @participants = @participants.page(params[:page] || 1)
+    end
+
     def participant_barcode
       params.expect(participant: :barcode)[:barcode]
     end

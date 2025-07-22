@@ -1,9 +1,12 @@
 en:
   activerecord:
     models:
+      delegation:
+        one: Delegation
+        other: Delegations
       lunch:
-        one: Lunch
-        other: Lunches
+        one: Meal
+        other: Meals
       participant:
         one: Participant
         other: Participants
@@ -14,27 +17,53 @@ en:
         one: Provider
         other: Providers
       food_restriction:
-        one: Food Restriction
-        other: Food Restrictions
+        one: Dietary Restriction
+        other: Dietary Restrictions
     attributes:
+      delegation:
+        name: Name
+        participants_count: '# Participants'
       participant:
         barcode: Barcode
         name: Name
-        welcome_kit: Welcome kit
+        welcome_kit: Welcome Kit
+        food_provider: Provider
+        food_provider_id: Provider
+        role: Role
+        role/speaker: Speaker
+        role/adjudicator: Judge
+        role/volunteer: Volunteer
+        role/host: Host Team
+        role/academic_team: Academic Team
+        role/observer: Observer
+        role/coach: Coach
+        role/team_manager: Team Manager
+        role/ia: Independent Adjudicator
+        food_restriction_ids: Dietary Restrictions
       lunch:
-        delivery_date: Date
+        delivered_at: Delivery Date
         participants: Participants
         user: User
+        kind: Type
+        food_provider_id: Provider
+        kind/other: Other
+        kind/breakfast: Breakfast
+        kind/dinner: Dinner
+        kind/lunch: Lunch
       user:
-        locale/es: Español
+        locale/es: Spanish
         locale/en: English
         name: Name
-        email_address: Email address
+        email_address: Email Address
         password: Password
         locale: Language
       food_provider:
         name: Name
         default: Default
+        participants_count: '# Participants'
       food_restriction:
         name: Name
         kind: Type
+        kind/other: Other
+        kind/religious: Religious
+        kind/allergy: Allergy

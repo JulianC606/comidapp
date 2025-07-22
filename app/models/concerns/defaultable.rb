@@ -3,6 +3,10 @@ module Defaultable
 
   included do
     before_save :reset_default, if: :assigned_default?
+
+    def self.default
+      find_by(default: true)
+    end
   end
 
   private
